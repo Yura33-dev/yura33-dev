@@ -1,0 +1,27 @@
+/* TASK 3 */
+div {
+  font-size: 1em; /* 16px*/
+}
+
+span {
+  font-size: 1.6em; /* 16px * 1.6 = 25,6px */
+}
+
+span > span {
+  font-size: 1.6em; /* 25,6 * 1.6 = 40.06px */
+}
+
+/* TASK 4 */
+
+div strong {
+  font-size: 1.6em;
+}
+
+div strong > strong {
+  font-size: inherit;
+}
+
+/* TASK 5 */
+ul {
+  list-style-type: square;
+}

@@ -1,4 +1,5 @@
 /* Explanation for TASK 6. Rule @import must be at first line before defined styles */
+@import url("./common.css");
 
 /* TASK 8 */
 body {
