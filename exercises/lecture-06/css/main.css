@@ -1,0 +1,84 @@
+/* TASK 2 */
+ul > li > a {
+  color: indigo;
+}
+
+ul > li > a:visited {
+  color: gold;
+}
+
+ul > li > a:hover {
+  color: salmon;
+}
+
+ul > li > a:active {
+  color: red;
+}
+
+ul > li > a:focus {
+  color: orange;
+}
+
+/* TASK 3 */
+input {
+  background-color: rgba(255, 0, 0, 0.25);
+}
+input:in-range {
+  background-color: rgba(0, 255, 0, 0.25);
+}
+
+/* TASK 4 */
+input + ul > li:first-child {
+  background-color: orange;
+}
+
+/* TASK 5 */
+.task5 > ul > li:first-child,
+.task5 > ul > li span:first-child {
+  background-color: orange;
+}
+
+/* TASK 6 */
+.task6 > ul > li:last-child,
+.task6 > ul > li span:last-child {
+  background-color: orange;
+}
+
+/* TASK 7 */
+.task7 > ul > li:not(.first-item) {
+  background-color: orange;
+}
+
+.task7 > ul > li:not(:last-child, .first-item) {
+  color: black;
+  background-color: yellow;
+}
+
+/* TASK 8 */
+
+ol > li:nth-child(2) {
+  color: orange;
+}
+
+ol > li:nth-child(even) {
+  color: orange;
+}
+
+ol > li:nth-child(2n + 6) {
+  color: orange;
+}
+
+/* TASK 9 */
+ol + h1::before {
+  content: "Слава ";
+}
+
+/* TASK 10 */
+h1 + h1::after {
+  content: " Слава";
+}
+
+/* TASK 11 */
+.cont::before {
+  content: "\0A7";
+}

@@ -9,13 +9,10 @@
 }
 
 :root {
-  --primary-font-family: "Roboto", sans-serif;
-  --primary-font-size: 0.875rem;
-}
-
-html {
   --primary-text-color: #000;
   --primary-bg-color: #fff;
+  --primary-font-family: "Roboto", sans-serif;
+  --primary-font-size: 0.875rem;
 }
 
 body {
