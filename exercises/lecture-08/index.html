@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* TASK 1 */
+        /* padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 25px;
+        padding-left: 20px; */
+
+        padding: 10px 20px 25px 20px;
+
+        /* margin-top: 25px;
+        margin-right: 20px;
+        margin-bottom: 25px;
+        margin-left: 20px; */
+
+        margin: 25px 20px 25px 20px;
+      }
+
+      /* TASK 7 */
+      div {
+        border: 10px dotted black;
+        padding: 15px;
+        background: lightblue;
+      }
+      #example1 {
+        background-clip: border-box;
+      }
+
+      #example2 {
+        background-clip: padding-box;
+      }
+
+      #example3 {
+        background-clip: content-box;
+      }
+
+      /* TASK 8 */
+      h1 > span {
+        display: inline-block;
+        width: min-content;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TASK 2 -->
+    <!-- Ширина елементу box буде 300px при border-box або 324px при content-box -->
+
+    <!-- .box{ 
+            width: 300px; 
+            padding: 10px; 
+            border: dashed 2px green;
+        } -->
+
+    <!-- <div class="box"></div> -->
+
+    <!-- TASK 3 -->
+    <!-- При border-box ширина елементу first-box буде 200px, висота - 100px.
+         При content-box ширина елементу first-box буде 256px, висота - 156px
+    
+    <!-- .first-box {
+        width: 200px;
+        height: 100px;
+        border: 8px solid blue;
+        padding: 20px;
+        background: yellow;
+    } -->
+    <!-- <div class="first-box"></div> -->
+
+    <!-- TASK 4 -->
+    <!-- При border-box ширина елементу second-box буде 200px, висота - 100px.
+         При content-box ширина елементу second-box буде 216px, висота - 116px
+    
+    <!-- .second-box {
+        width: 200px;
+        height: 100px;
+        border: 8px solid blue;
+        background: yellow;
+  
+    } -->
+    <!-- <div class="second-box"></div> -->
+
+    <!-- TASK 5 -->
+    <!-- При content-box ширина елементу div буде 256px
+        div{
+            box-sizing:content-box;
+            width: 200px;
+            border: 8px solid blue;
+            padding: 20px;
+            background: yellow;
+        }
+     -->
+
+    <!-- TASK 6 -->
+    <!-- При border-box ширина елементу div буде 200px
+        div{
+            box-sizing:border-box;
+            width: 200px;
+            border: 8px solid blue;
+            padding: 20px;
+            background: yellow;
+        }
+     -->
+
+    <!-- TASk 7 -->
+    <div id="example1">
+      <p>
+        Правило для example1: фон всередині елемента має простягатися за межі
+        рамки.
+      </p>
+    </div>
+
+    <div id="example2">
+      <p>
+        Правило для example2: фон всередині елемента має простягатися до
+        внутрішнього краю рамки.
+      </p>
+    </div>
+
+    <div id="example3">
+      <p>
+        Правило для example3: фон всередині елемента має простягатися до краю
+        поля вмісту.
+      </p>
+    </div>
+
+    <!-- TASK 8 -->
+    <h1><span>Awesome article</span></h1>
+  </body>
+</html>
