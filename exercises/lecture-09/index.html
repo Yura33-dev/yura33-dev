@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lecture #9 Управління потоком</title>
+    <style>
+      img {
+        width: 250px;
+        margin-left: 17px;
+        margin-bottom: 10px;
+        /* TASK 1 */
+        float: right;
+      }
+
+      /* TASK 2 */
+      .static-position {
+        position: static;
+        background-color: yellow;
+      }
+      .relative-position {
+        position: relative;
+        background-color: red;
+        top: 0;
+        left: 130px;
+      }
+      .absolute-position {
+        position: absolute;
+        background-color: blueviolet;
+        top: 0;
+        left: 30px;
+      }
+      p:nth-of-type(1) {
+        position: absolute;
+        background: lime;
+        top: 10px;
+        right: 30px;
+
+        /* Що потрібно додати до правила p:nth-of-type(1) ,
+        щоб змінити порядок відображення першого абзацу у стеку розташування елементів?
+
+        Answer is:
+        */
+        z-index: 1000;
+      }
+
+      /* TASK 3 */
+      h1 {
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1001;
+      }
+
+      /* TASK 4 */
+      dt {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin: 1em 0;
+        /* Що треба додати до визначення dt, щоб змусити панель навігації
+        прокручуватися разом зі сторінкою до певної точки, а потім
+        залишатися у верхній частині сторінки. 
+        
+        Answer is:
+        */
+        position: sticky;
+        top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TASK 1 -->
+    <h1>Управління потоком</h1>
+    <p>
+      Examples of the CSS float Property Below are some examples of how the CSS
+      float property works.
+      <img
+        src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
+      />
+    </p>
+
+    <!-- TASK 2 -->
+    <p>
+      Статичне позиціонування є типовим для кожного елемента. Це просто означає,
+      помістіть елемент у звичайне положення в документі.
+    </p>
+    <p class="static-position">
+      Статичне позиціонування є типовим для кожного елемента. Це просто означає,
+      помістіть елемент у звичайне положення в документі.
+    </p>
+
+    <p class="relative-position">
+      Відносне позиціювання. Положення елемента встановлюється відносно його
+      поточного положення. Додавання властивостей left, top, right і bottom
+      змінює позицію елемента і зрушує його в ту чи іншу сторону. Ця властивість
+      дозволяє змінювати позицію елемента без зміни макету.
+    </p>
+
+    <p class="absolute-position">
+      Абсолютне позиціювання. Положення елемента встановлюється відносно його
+      батьківського елемента, якому задане позиціювання relative. Якщо такого
+      батківського елементу немає, позиціювання відбувається відносно вікна
+      браузерa. Додавання властивостей left, top, right і bottom змінює позицію
+      елемента і зрушує його в ту чи іншу сторону. Ця властивість дозволяє
+      змінювати позицію елемента зі зміною макету, бо при абсолютному
+      позиціюванні блок "вилітає" з потоку і розміщається за ефектом "карткової
+      колоди".
+    </p>
+
+    <h2>Sticky positioning</h2>
+
+    <dl>
+      <dt>A</dt>
+      <dd>Apple</dd>
+      <dd>Ant</dd>
+      <dd>Altimeter</dd>
+      <dd>Airplane</dd>
+      <dt>B</dt>
+      <dd>Bird</dd>
+      <dd>Buzzard</dd>
+      <dd>Bee</dd>
+      <dd>Banana</dd>
+      <dd>Beanstalk</dd>
+      <dt>C</dt>
+      <dd>Calculator</dd>
+      <dd>Cane</dd>
+      <dd>Camera</dd>
+      <dd>Camel</dd>
+      <dt>D</dt>
+      <dd>Duck</dd>
+      <dd>Dime</dd>
+      <dd>Dipstick</dd>
+      <dd>Drone</dd>
+      <dt>E</dt>
+      <dd>Egg</dd>
+      <dd>Elephant</dd>
+      <dd>Egret</dd>
+    </dl>
+  </body>
+</html>
