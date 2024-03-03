@@ -1,0 +1,14 @@
+.grid {
+  --min: 30ch;
+
+  display: grid;
+
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+}
+
+body {
+  --padding: 5vw;
+  --max-width: 180ch;
+}
