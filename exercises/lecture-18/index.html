@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- - функція checkAge повертає true, якщо параметр age перевищує 18. - в іншому
+    випадку запитує підтвердження та повертає результат: -->
+
+    <script>
+      function checkAge(age) {
+        if (age > 18) {
+          return true;
+        } else {
+          // ...
+          return confirm("Did parents allow you?");
+        }
+      }
+
+      // TASK 1.1.
+      function checkAge2(age) {
+        if (age > 18) {
+          return true;
+        }
+        // ...
+        return confirm("Did parents allow you?");
+      }
+
+      //   TASK 1.2.
+      //   Answer: No, function will continue execute as expected
+
+      //   TASK 1.3.
+      //   Answer: There is no difference in execution of function. Firstly, we check age for overage. If age greater then 18, we will return true. Secondly, If age is under 18 if-check will not catch conditional and code will execute and meet return with confirmation.
+
+      //   TASK 2
+      //   TASK 2.1
+      function checkAge3(age) {
+        return age > 18 ? true : confirm("Did parents allow you?");
+      }
+
+      //   TASK 2.2.
+      function checkAge4(age) {
+        return age > 18 || confirm("Did parents allow you?");
+      }
+
+      //   TASK 3
+      // Answer: parentheses around age > 18 are not important in this case
+
+      //   TASK 4
+      function min(a, b) {
+        return a > b ? a : a < b ? a : b;
+      }
+
+      //   TASK 4.1
+      function min2(a, b) {
+        if (a > b) {
+          return a;
+        } else if (a < b) {
+          return b;
+        } else {
+          return b;
+        }
+      }
+
+      //   TASK 4.2. (See task 4)
+
+      // TASK 5
+      function pow() {
+        const xValue = Number(prompt("Specify x value"));
+        const nValue = Number(prompt("Specify n value"));
+
+        if (typeof xValue !== "number")
+          return "You should specify x value as number";
+
+        if (
+          nValue < 1 ||
+          typeof nValue !== "number" ||
+          !Number.isInteger(nValue)
+        )
+          return "You should specify n value as integer number and greater than 1";
+
+        const result = Math.pow(xValue, nValue);
+
+        if (isNaN(result)) {
+          return "Something went wrong... Please, try again";
+        }
+
+        return result;
+      }
+
+      //   TASK 6
+      const ask = (question, yes, no) => {
+        if (confirm(question)) return yes();
+        else return no();
+      };
+
+      //   TASK 7
+      const ask2 = function (question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+      };
+
+      //   TASK 8
+      function A() {
+        console.log("A was called");
+        return undefined;
+      }
+      function B() {
+        console.log("B was called");
+        return false;
+      }
+      function C() {
+        console.log("C was called");
+        return "foo";
+      }
+
+      //   TASK 8.1
+      console.log(C(A()));
+
+      // TASK 8.2
+      console.log(C(B()));
+    </script>
+  </body>
+</html>
