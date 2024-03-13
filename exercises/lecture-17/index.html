@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // TASK 1
+      let x = 3;
+      let y = 4;
+
+      x == 3; // true
+      x === "3"; // false
+      x != 5; // true
+      x !== "5"; // true
+      X !== 3; // x undefined
+      y > 5; // false
+      y >= 3; // true
+      y < 5; // true
+      y <= 2; // false
+      1 == true; // true
+      null == undefined; // true
+      NaN == NaN; // false
+
+      //   TASK 2
+      let x = 3;
+      let y = 4;
+      let z = 5;
+
+      x ||= y; // x = 3
+      x || (y = z); // y = 4
+      x &&= y; // x = 4
+      x && (y = z); // y = 5
+      x ??= y; // x = 3
+      x ?? (y = z); // y = 4
+
+      // TASK 3
+      const answerNum = Number(prompt("Try to guess number!"));
+
+      if (answerNum > 3) {
+        alert("The number is too long");
+      } else if (answerNum < 3) {
+        alert("The number is short");
+      } else {
+        alert("Congratulations, You did it!");
+      }
+
+      // TASK 4
+      const answer = prompt("Please input some day of week").toLowerCase();
+
+      // if
+      if (answer === "monday" || answer === "понеділок") {
+        alert("Start of the work week!");
+      } else if (answer === "friday" || answer.endsWith("ятниця")) {
+        alert("End of the work week!");
+      } else {
+        alert("A regular day");
+      }
+
+      // switch
+      switch (answer) {
+        case "monday":
+          alert("Start of the work week!");
+          break;
+        case "понеділок":
+          alert("Start of the work week!");
+          break;
+        case "friday":
+          alert("End of the work week!");
+          break;
+        case "пятниця":
+          alert("End of the work week!");
+          break;
+        case "п'ятниця":
+          alert("End of the work week!");
+          break;
+        case "п`ятниця":
+          alert("End of the work week!");
+          break;
+        default:
+          alert("A regular day");
+      }
+
+      //   TASK 5
+      const score = 70;
+      let grade = null;
+
+      // if
+      if (Number(score) < 50) {
+        grade = "F";
+      } else if (Number(score) < 70) {
+        grade = "D";
+      } else if (Number(score) < 80) {
+        grade = "C";
+      } else if (Number(score) < 90) {
+        grade = "B";
+      } else {
+        grade = "A";
+      }
+
+      // switch
+      switch (true) {
+        case Number(score) < 50:
+          grade = "F";
+          break;
+
+        case Number(score) < 60:
+          grade = "D";
+          break;
+
+        case Number(score) < 70:
+          grade = "C";
+          break;
+
+        case Number(score) < 80:
+          grade = "B";
+          break;
+
+        default:
+          grade = "A";
+      }
+
+      //   TASK 6
+      let firstName = null;
+      let lastName = undefined;
+
+      let username = (firstName || lastName) ?? "Guest";
+      console.log(username); // "Guest"
+    </script>
+
+    <script></script>
+  </body>
+</html>
