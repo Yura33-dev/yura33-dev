@@ -1,51 +1,116 @@
-/* TASK 7 */
-@charset "UTF-8";
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-:root {
-  --primary-text-color: #000;
-  --primary-bg-color: #fff;
-  --primary-font-family: "Roboto", sans-serif;
-  --primary-font-size: 0.875rem;
+ol,
+ul {
+  list-style-type: none;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: inherit;
+  line-height: 1.5;
+  text-align: center;
+
+  border: none;
+  background-color: var(--primary-color);
+  padding: 0.75rem 1.875rem;
+
+  color: var(--neutral-00);
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
 }
 
 body {
   font-family: var(--primary-font-family);
   font-size: var(--primary-font-size);
-}
-
-footer {
-  --footer-text-color: #fff;
-  --fuuter-bg-color: #000;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1 {
-  font-size: 1.45rem;
+  font-weight: 200;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: var(--primary-color);
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-transform: capitalize;
+  color: var(--primary-color);
 }
 
-.list-unstyled {
-  list-style: none;
+h3 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: var(--neutral-100);
 }
 
-.footer-social {
+p {
+  line-height: 1.5;
+  color: var(--neutral-80);
 }
 
-nav > ul > li > a {
-  text-decoration: none;
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  body {
+    font-size: var(--standart-font-size);
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1180px) {
+  .container {
+    max-width: 1180px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
+
+.btn-bg-transparent {
+  background: transparent;
+  border: 0.093rem solid var(--primary-color);
+  border-radius: 4.75rem;
 }

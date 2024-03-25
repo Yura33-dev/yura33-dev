@@ -3,129 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Моя домашня сторінка</title>
+    <title>Monito | Main page</title>
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png"
+      href="./assets/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
+      href="./assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
+      href="./assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
 
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Головна</a></li>
-          <li><a href="./about.html">Про нас</a></li>
-          <li><a href="./catalog.html">Каталог</a></li>
-          <li><a href="./contact.html">Контакти</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <div class="container">
+        <a href="./index.html" class="header-logotype">
+          <svg width="92" height="32" class="icon">
+            <use href="./assets/images/icons.svg#logo-icon"></use>
+          </svg>
+        </a>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="#" class="fas fa-heart"></a>
-          </li>
-          <li>
-            <a href="./cart.html" class="fas fa-shopping-cart"></a>
-          </li>
-          <li>
-            <a href="#!" class="fas fa-user"></a>
-          </li>
-        </ul>
-      </nav>
-      <h1>Welcome to Brand</h1>
+        <nav class="nav">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="#!" class="menu-link">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="#!" class="menu-link">Category</a>
+            </li>
+            <li class="menu-item">
+              <a href="#!" class="menu-link">About</a>
+            </li>
+            <li class="menu-item">
+              <a href="#!" class="menu-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="burger-btn">
+          <svg width="30" height="25" class="icon">
+            <use href="./assets/images/icons.svg#burger-icon"></use>
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <!-- TASK 9 -->
-    <footer>
-      <section>
-        <div>
-          <h2>About</h2>
-          <ul>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Customers</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-title">
+            One more friend
+            <span class="hero-title-decoration">Thousands more fun!</span>
+          </h1>
+          <p class="hero-description">
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can meet your needs!
+          </p>
+          <button class="hero-btn">Explore now</button>
+          <picture class="hero-animal-image">
+            <source
+              media="(max-width: 768px)"
+              srcset="
+                ./assets/images/dogs-mobile@1.png 1x,
+                ./assets/images/dogs-mobile@2.png 2x
+              "
+            />
 
-        <div>
-          <h2>Resources</h2>
-          <ul>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">eBooks</a></li>
-            <li><a href="#">Webinars</a></li>
-          </ul>
-        </div>
+            <source
+              media="(min-width: 769px) and (max-width: 990px)"
+              srcset="
+                ./assets/images/dogs-tablet@1.png 1x,
+                ./assets/images/dogs-tablet@2.png 2x
+              "
+            />
 
-        <div>
-          <h2>Contact</h2>
-          <ul>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Sales</a></li>
-            <li><a href="#">Advertise</a></li>
-          </ul>
+            <source
+              media="(min-width: 991px)"
+              srcset="
+                ./assets/images/dogs-desktop@1.png 1x,
+                ./assets/images/dogs-desktop@2.png 2x
+              "
+            />
+            <img
+              srcset="
+                ./assets/images/dogs-dektop@1.png 1x,
+                ./assets/images/dogs-dektop@2.png 2x
+              "
+              src="./assets/images/dogs-desktop@1.png"
+              alt="Dogs"
+            />
+          </picture>
         </div>
-
-        <section>
-          <ul>
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-          &copy; 2024 Copyright Shopaholic Inc.
-        </section>
       </section>
+    </main>
 
-      <section class="footer-social">
-        <ul class="list-unstyled">
-          <li>
-            <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com"><i class="fab fa-github"></i></a>
-          </li>
-          <li>
-            <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
-          </li>
-          <li>
-            <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
-          </li>
-          <li>
-            <a href="https://instagram.com"
-              ><i class="fab fa-instagram-square"></i
-            ></a>
-          </li>
-        </ul>
-      </section>
-    </footer>
+    <footer></footer>
   </body>
 </html>

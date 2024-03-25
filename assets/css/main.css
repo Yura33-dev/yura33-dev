@@ -1,31 +1,6 @@
-/* Explanation for TASK 6. Rule @import must be at first line before defined styles */
-@import url("./common.css");
+@charset "UTF-8";
 
-/* TASK 8 */
-body {
-  color: var(--primary-text-color);
-  background-color: var(--primary-bg-color);
-}
-
-/* TASK 13 */
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.bg-dark {
-  background-color: black;
-}
-
-.text-white {
-  color: white;
-}
-
-ul.categories li {
-  color: indigo;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-ul.categories li a:hover {
-  background-color: lightgray;
-}
+@import url('./variables.css');
+@import url('./common.css');
+@import url('./header.css');
+@import url('./hero.css');

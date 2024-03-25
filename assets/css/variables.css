@@ -1,0 +1,21 @@
+:root {
+  --primary-font-family: 'Inter', sans-serif;
+  --primary-font-size: 0.75rem;
+  --standart-font-size: 1rem;
+
+  --primary-color: #003459;
+  --secondary-color: #f7dba7;
+
+  --pink-red: #ff564f;
+  --green-light: #34c759;
+  --orange-shine: #ff912c;
+  --blue-sea: #00a7e7;
+
+  --neutral-100: #00171f;
+  --neutral-80: #242b33;
+  --neutral-60: #667479;
+  --neutral-40: #99a2a5;
+  --neutral-20: #ccd1d2;
+  --neutral-10: #ebeeef;
+  --neutral-00: #fdfdfd;
+}
