@@ -1,0 +1,56 @@
+section.new {
+  padding: 50px 0;
+  background-color: var(--neutral-10);
+}
+
+section.new .new-catalog {
+  display: flex;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+section.new .new-title {
+  margin-bottom: 1.25rem;
+}
+
+section.new .new-description {
+  font-size: 0.875rem;
+  color: var(--neutral-100);
+}
+
+section.new .card {
+  background-color: var(--neutral-00);
+  border-radius: 0.75rem;
+  flex-basis: calc((100% - 12px) / 2);
+  padding: 0.5rem;
+}
+
+section.new .card-image-wrapper {
+  width: 100%;
+  height: 169px;
+  overflow: hidden;
+
+  margin-bottom: 0.5rem;
+}
+
+section.new .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 0.625rem;
+}
+
+section.new .card-title {
+  min-height: 3.125rem;
+  margin-bottom: 0.25rem;
+}
+section.new .card-gender,
+section.new .card-age {
+  color: var(--neutral-60);
+}
+
+section.new .new-link {
+}

@@ -37,26 +37,35 @@
     <header class="header">
       <div class="container">
         <a href="./index.html" class="header-logotype">
-          <svg width="92" height="32" class="icon">
+          <svg width="115" height="40" class="icon">
             <use href="./assets/images/icons.svg#logo-icon"></use>
           </svg>
         </a>
 
-        <nav class="nav">
-          <ul class="menu-list">
-            <li class="menu-item">
-              <a href="#!" class="menu-link">Home</a>
+        <nav class="header-nav">
+          <ul class="header-menu-list">
+            <li class="header-menu-item">
+              <a href="./index.html" class="header-menu-link">Home</a>
             </li>
-            <li class="menu-item">
-              <a href="#!" class="menu-link">Category</a>
+            <li class="header-menu-item">
+              <a href="./catalog.html" class="header-menu-link">Products</a>
             </li>
-            <li class="menu-item">
-              <a href="#!" class="menu-link">About</a>
+            <li class="header-menu-item">
+              <a href="./adoption.html" class="header-menu-link">Adoption</a>
             </li>
-            <li class="menu-item">
-              <a href="#!" class="menu-link">Contact</a>
+            <li class="header-menu-item">
+              <a href="./about.html" class="header-menu-link">About</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="./catalog.html" class="header-menu-link">Contact</a>
             </li>
           </ul>
+
+          <button class="cart-btn">
+            <svg class="icon" width="23" height="23">
+              <use href="./assets/images/icons.svg#cart-icon"></use>
+            </svg>
+          </button>
         </nav>
 
         <button class="burger-btn">
@@ -72,17 +81,17 @@
         <div class="container">
           <h1 class="hero-title">
             One more friend
-            <span class="hero-title-decoration">Thousands more fun!</span>
+            <span class="hero-title-decoration">Thousands fun!</span>
           </h1>
           <p class="hero-description">
-            Having a pet means you have more joy, a new friend, a happy person
-            who will always be with you to have fun. We have 200+ different pets
-            that can meet your needs!
+            Having a pet means you have more joy, a new friend, a happy pet who
+            will always be with you. We have 200+ different pets that should
+            match your needs!
           </p>
-          <button class="hero-btn">Explore now</button>
+          <a class="btn-link" href="./adopt.html">Let's adopt cute pet!</a>
           <picture class="hero-animal-image">
             <source
-              media="(max-width: 768px)"
+              media="(max-width: 767px)"
               srcset="
                 ./assets/images/dogs-mobile@1.png 1x,
                 ./assets/images/dogs-mobile@2.png 2x
@@ -90,7 +99,7 @@
             />
 
             <source
-              media="(min-width: 769px) and (max-width: 990px)"
+              media="(min-width: 768px) and (max-width: 991px)"
               srcset="
                 ./assets/images/dogs-tablet@1.png 1x,
                 ./assets/images/dogs-tablet@2.png 2x
@@ -113,6 +122,137 @@
               alt="Dogs"
             />
           </picture>
+        </div>
+      </section>
+
+      <section class="new">
+        <div class="container">
+          <p class="new-description">What is new?</p>
+          <h2 class="new-title">Take a look at our pets</h2>
+          <div class="new-catalog">
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-1.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Labrador Retriever White</h3>
+              <p class="card-gender">Gender: Male</p>
+              <p class="card-age">Age: 4 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-6.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Husky Light</h3>
+              <p class="card-gender">Gender: Male</p>
+              <p class="card-age">Age: 3 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-5.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Alaskan Malamute Dark</h3>
+              <p class="card-gender">Gender: Female</p>
+              <p class="card-age">Age: 3 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-4.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">French Bulldog</h3>
+              <p class="card-gender">Gender: Female</p>
+              <p class="card-age">Age: 7 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-3.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Beagle</h3>
+              <p class="card-gender">Gender: Male</p>
+              <p class="card-age">Age: 7 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-2.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Staffordshire Bull Terrier</h3>
+              <p class="card-gender">Gender: Male</p>
+              <p class="card-age">Age: 18 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-7.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Alaskan Malamute White</h3>
+              <p class="card-gender">Gender: Male</p>
+              <p class="card-age">Age: 2 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-8.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Husky Light</h3>
+              <p class="card-gender">Gender: Female</p>
+              <p class="card-age">Age: 7 months</p>
+            </div>
+
+            <div class="card">
+              <div class="card-image-wrapper">
+                <img
+                  src="./assets/images/adoption/puppy-9.jpg"
+                  alt="puppy 1"
+                  class="card-image"
+                />
+              </div>
+              <h3 class="card-title">Welsh Corgi Pembroke</h3>
+              <p class="card-gender">Gender: Female</p>
+              <p class="card-age">Age: 4 months</p>
+            </div>
+          </div>
+          <a class="btn-link btn-link-bg-transparent" href="./adopt.html">
+            View more
+            <svg class="icon" width="24px" height="24px">
+              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+            </svg>
+          </a>
         </div>
       </section>
     </main>

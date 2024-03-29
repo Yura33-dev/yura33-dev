@@ -14,19 +14,32 @@
   background-position: left bottom;
 }
 
-.header .header-logotype {
-  padding: 1.25rem 0;
+.header .header-logotype,
+.header .header-menu-link {
+  padding: 1rem 0.5rem;
 }
 
-.header .nav {
+.header .header-nav {
   display: none;
 }
 
-.header .menu-list {
+.header .header-menu-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 3rem;
+  column-gap: 2rem;
+}
+
+.header .header-menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header-menu-link {
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--primary-color);
 }
 
 .header .burger-btn {
@@ -41,23 +54,61 @@
   fill: var(--primary-color);
 }
 
+.header .cart-btn {
+  padding: 0.5rem;
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .cart-btn .icon {
+  fill: transparent;
+  stroke: var(--primary-color);
+}
+
 @media (min-width: 768px) {
-  .header > .container {
-    max-width: 100%;
-    margin: 0 auto;
-  }
 }
 
 @media (min-width: 991px) {
-  .header > .container {
-    max-width: 1180px;
-  }
-
-  .header .nav {
-    display: block;
+  .header .header-nav {
+    display: flex;
+    column-gap: 100px;
   }
 
   .header .burger-btn {
     display: none;
+  }
+
+  .header .cart-btn:focus-visible,
+  .header a:focus-visible {
+    outline-width: 0px;
+    outline-style: solid;
+    outline-color: var(--secondary-color);
+
+    transition: color 100ms linear, outline-width 100ms linear;
+  }
+
+  .header .cart-btn:focus,
+  .header a:focus {
+    outline-width: 2px;
+  }
+
+  .header a:hover,
+  .header a:focus {
+    color: #ffbb3e;
+  }
+
+  .header .cart-btn:hover {
+    cursor: pointer;
+  }
+
+  .header .icon {
+    transition: stroke 100ms linear;
+  }
+  .header .cart-btn:hover .icon,
+  .header .cart-btn:focus .icon {
+    stroke: #ffbb3e;
   }
 }
