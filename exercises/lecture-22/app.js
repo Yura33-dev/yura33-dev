@@ -34,8 +34,8 @@ for (const container of containers) {
 }
 
 // TASK 7
-for (const container of containers) {
-  console.log(container.firstElementChild.firstElementChild);
+for (let i = 0; i < containers.length; i++) {
+  console.log(containers[i].firstElementChild.firstElementChild.outerHTML);
 }
 
 // TASK 8
