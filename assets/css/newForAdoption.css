@@ -52,5 +52,9 @@ section.new .card-age {
   color: var(--neutral-60);
 }
 
+section.new .btn-link.desktop {
+  display: none;
+}
+
 section.new .new-link {
 }

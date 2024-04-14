@@ -28,28 +28,40 @@ const xhrPromise = (method, url) => {
   return promise;
 };
 
-xhrPromise('GET', url)
-  .then(response => {
-    const posts = JSON.parse(response);
-    let result = '';
+const usersData = [];
 
-    posts.forEach(item => {
-      result += template(item);
-    });
+const getUser = async userId => {
+  const userExist = usersData.find(user => user.id === userId);
 
-    document.getElementById('blog').innerHTML = result;
-  })
-  .then(() => {
-    const authors = document.querySelectorAll('.author');
+  if (userExist) {
+    return userExist;
+  }
 
-    authors.forEach(author => {
-      const id = author.dataset.id;
-      xhrPromise(
-        'GET',
-        `https://jsonplaceholder.typicode.com/users/${id}`
-      ).then(response => {
-        const user = JSON.parse(response);
-        author.textContent = user.name;
-      });
-    });
+  const fetchUser = await xhrPromise(
+    'GET',
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  );
+
+  const user = await JSON.parse(fetchUser);
+  usersData.push(user);
+  return user;
+};
+
+xhrPromise('GET', url).then(async response => {
+  const posts = JSON.parse(response);
+  let result = '';
+
+  posts.forEach(item => {
+    result += template(item);
   });
+
+  document.getElementById('blog').innerHTML = result;
+
+  const authors = document.querySelectorAll('.author');
+
+  for (const author of authors) {
+    const id = +author.dataset.id;
+    const user = await getUser(id);
+    author.textContent = user.name;
+  }
+});
