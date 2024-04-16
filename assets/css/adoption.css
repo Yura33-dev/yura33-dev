@@ -1,0 +1,62 @@
+section.adoption {
+  padding: 50px 0;
+  background-color: var(--neutral-00);
+}
+
+section.adoption .adoption-catalog {
+  display: flex;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+section.adoption .card {
+  background-color: var(--neutral-00);
+  border-radius: 0.75rem;
+  flex-basis: calc((100% - 12px) / 2);
+  padding: 0.5rem;
+
+  box-shadow: 0 4px 28px -2px rgba(0, 0, 0, 0.08);
+}
+
+section.adoption .card-image-wrapper {
+  width: 100%;
+  height: 169px;
+  overflow: hidden;
+
+  margin-bottom: 0.5rem;
+}
+
+section.adoption .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 0.625rem;
+}
+
+section.adoption .card-title {
+  min-height: 3.125rem;
+  margin-bottom: 0.25rem;
+}
+section.adoption .card-gender,
+section.adoption .card-age {
+  color: var(--neutral-60);
+}
+
+@media (min-width: 768px) {
+  section.adoption .card {
+    flex-basis: calc((100% - 24px) / 3);
+  }
+}
+
+@media (min-width: 991px) {
+  section.adoption .new-catalog {
+    gap: 20px;
+  }
+
+  section.adoption .card {
+    flex-basis: calc((100% - 60px) / 4);
+  }
+}

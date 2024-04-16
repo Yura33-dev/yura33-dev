@@ -81,6 +81,10 @@
     display: none;
   }
 
+  .header a {
+    transition: color 100ms linear;
+  }
+
   .header .cart-btn:focus-visible,
   .header a:focus-visible {
     outline-width: 0px;

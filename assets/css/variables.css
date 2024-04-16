@@ -4,7 +4,14 @@
   --standart-font-size: 1rem;
 
   --primary-color: #003459;
+  --primary-color-80: #002a48;
+  --primary-color-60: #00528c;
+  --promary-color-40: #0078cd;
+
   --secondary-color: #f7dba7;
+  --secondary-color-80: #eec77e;
+  --secondary-color-60: #f1d092;
+  --secondary-color-40: #fceed5;
 
   --pink-red: #ff564f;
   --green-light: #34c759;
