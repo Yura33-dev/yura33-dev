@@ -12,8 +12,19 @@ section.products .product-card {
   box-shadow: 0 4px 28px -2px rgba(0, 0, 0, 0.08);
   background: #fdfdfd;
 
-  padding: 10px 10px 20px 10px;
   border-radius: 0.75rem;
+
+  overflow: hidden;
+  outline: none;
+}
+
+section.products .product-link {
+  padding: 10px 10px 20px 10px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 section.products .product-image-wrapper {
@@ -28,10 +39,13 @@ section.products .product-image {
   object-fit: cover;
 
   border-radius: 0.625rem;
+
+  transition: transform 100ms linear;
 }
 
 section.products .product-title {
   font-size: 1rem;
+  transition: color 100ms linear;
 }
 
 section.products .product-title,
@@ -62,6 +76,8 @@ section.products .product-price {
   font-size: 1.1rem;
   line-height: 1.43;
   color: var(--neutral-100);
+
+  transition: color 100ms linear;
 }
 
 section.products .price-currency {
@@ -74,24 +90,35 @@ section.products .price-currency {
   }
 
   section.products .product-card {
-    flex-basis: calc((100% - 1.25rem) / 2);
-  }
-
-  section.products .product-title {
-    font-size: 1.25rem;
-  }
-
-  section.products .product-types {
-    font-size: 1rem;
+    flex-basis: calc((100% - (1.25rem * 2)) / 3);
   }
 
   section.products .product-price {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 
 @media (min-width: 991px) {
   section.products .product-card {
     flex-basis: calc((100% - (1.25rem * 3)) / 4);
+  }
+
+  section.products .product-card:hover .product-image,
+  section.products .product-card:focus .product-image {
+    transform: scale(1.1);
+  }
+
+  section.products .product-card:focus {
+    outline-offset: 0.3rem;
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+  }
+
+  section.products .product-card:hover .product-title,
+  section.products .product-card:focus .product-title,
+  section.products .product-card:hover .product-price,
+  section.products .product-card:focus .product-price {
+    color: var(--orange-shine);
   }
 }

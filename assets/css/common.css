@@ -132,6 +132,15 @@ p {
 .btn-link.desktop {
   margin-top: 0;
   display: none;
+
+  outline: none;
+}
+
+.btn-link.desktop:focus {
+  outline-width: 2px;
+  outline-color: var(--primary-color-80);
+  outline-offset: 0;
+  outline-style: solid;
 }
 
 .icon {

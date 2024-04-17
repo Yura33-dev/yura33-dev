@@ -51,7 +51,7 @@
               <a href="./catalog.html" class="header-menu-link">Products</a>
             </li>
             <li class="header-menu-item">
-              <a href="./adoption.html" class="header-menu-link">Adoption</a>
+              <a href="./adopt.html" class="header-menu-link">Adoption</a>
             </li>
             <li class="header-menu-item">
               <a href="./catalog.html" class="header-menu-link">Contact</a>
@@ -85,7 +85,16 @@
             will always be with you. We have 200+ different pets that should
             match your needs!
           </p>
-          <a class="btn-link" href="./adopt.html">Let's adopt cute pet!</a>
+          <div class="hero-btn">
+            <a class="btn-link" href="./adopt.html"> Let's adopt cute pet! </a>
+            <svg class="icon pet-1" width="60" height="60">
+              <use href="./assets/images/icons.svg#dog-face-icon"></use>
+            </svg>
+            <svg class="icon pet-2" width="50" height="50">
+              <use href="./assets/images/icons.svg#dog2-face-icon"></use>
+            </svg>
+          </div>
+
           <picture class="hero-animal-image">
             <source
               media="(max-width: 767px)"
@@ -142,8 +151,8 @@
           </div>
 
           <div class="adoption-catalog">
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-1.jpg"
@@ -152,13 +161,21 @@
                   />
                 </div>
                 <h3 class="card-title">Labrador Retriever White</h3>
-                <p class="card-gender">Gender: Male</p>
-                <p class="card-age">Age: 4 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Male</p>
+                  <p class="age">Age: 4 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-6.jpg"
@@ -167,13 +184,21 @@
                   />
                 </div>
                 <h3 class="card-title">Husky Light</h3>
-                <p class="card-gender">Gender: Male</p>
-                <p class="card-age">Age: 3 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Male</p>
+                  <p class="age">Age: 3 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-5.jpg"
@@ -182,13 +207,21 @@
                   />
                 </div>
                 <h3 class="card-title">Alaskan Malamute Dark</h3>
-                <p class="card-gender">Gender: Female</p>
-                <p class="card-age">Age: 3 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Female</p>
+                  <p class="age">Age: 3 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-4.jpg"
@@ -197,28 +230,21 @@
                   />
                 </div>
                 <h3 class="card-title">French Bulldog</h3>
-                <p class="card-gender">Gender: Female</p>
-                <p class="card-age">Age: 7 months</p>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="#!">
-                <div class="card-image-wrapper">
-                  <img
-                    src="./assets/images/adoption/puppy-3.jpg"
-                    alt="puppy 1"
-                    class="card-image"
-                  />
+                <div class="card-info">
+                  <p class="gender">Gender: Female</p>
+                  <p class="age">Age: 7 months</p>
                 </div>
-                <h3 class="card-title">Beagle</h3>
-                <p class="card-gender">Gender: Male</p>
-                <p class="card-age">Age: 7 months</p>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-2.jpg"
@@ -227,13 +253,21 @@
                   />
                 </div>
                 <h3 class="card-title">Staffordshire Bull Terrier</h3>
-                <p class="card-gender">Gender: Male</p>
-                <p class="card-age">Age: 18 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Male</p>
+                  <p class="age">Age: 18 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-7.jpg"
@@ -242,13 +276,21 @@
                   />
                 </div>
                 <h3 class="card-title">Alaskan Malamute White</h3>
-                <p class="card-gender">Gender: Male</p>
-                <p class="card-age">Age: 2 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Male</p>
+                  <p class="age">Age: 2 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-8.jpg"
@@ -257,13 +299,21 @@
                   />
                 </div>
                 <h3 class="card-title">Husky Light</h3>
-                <p class="card-gender">Gender: Female</p>
-                <p class="card-age">Age: 7 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Female</p>
+                  <p class="age">Age: 7 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
 
-            <div class="card">
-              <a href="#!">
+            <div class="card" tabindex="0">
+              <a href="#!" class="card-link" tabindex="-1">
                 <div class="card-image-wrapper">
                   <img
                     src="./assets/images/adoption/puppy-9.jpg"
@@ -272,8 +322,16 @@
                   />
                 </div>
                 <h3 class="card-title">Welsh Corgi Pembroke</h3>
-                <p class="card-gender">Gender: Female</p>
-                <p class="card-age">Age: 4 months</p>
+                <div class="card-info">
+                  <p class="gender">Gender: Female</p>
+                  <p class="age">Age: 4 months</p>
+                </div>
+                <button type="button" class="card-btn" tabindex="-1">
+                  More info
+                  <svg class="icon" width="20" height="20">
+                    <use href="./assets/images/icons.svg#paw-icon"></use>
+                  </svg>
+                </button>
               </a>
             </div>
           </div>
@@ -335,8 +393,8 @@
           </div>
 
           <div class="products-catalog">
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-1@1.jpg"
@@ -362,8 +420,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-2@1.jpg"
@@ -389,8 +447,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-3@1.jpg"
@@ -414,8 +472,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-4@1.jpg"
@@ -437,8 +495,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-5@1.jpg"
@@ -460,8 +518,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-6@1.jpg"
@@ -483,8 +541,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-7@1.jpg"
@@ -506,8 +564,8 @@
               </a>
             </div>
 
-            <div class="product-card">
-              <a href="#!">
+            <div class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
                 <div class="product-image-wrapper">
                   <img
                     src="./assets/images/products/product-8@1.jpg"

@@ -6,18 +6,26 @@ section.adoption {
 section.adoption .adoption-catalog {
   display: flex;
   align-items: flex-start;
-
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 section.adoption .card {
   background-color: var(--neutral-00);
   border-radius: 0.75rem;
-  flex-basis: calc((100% - 12px) / 2);
-  padding: 0.5rem;
+  flex-basis: 100%;
 
   box-shadow: 0 4px 28px -2px rgba(0, 0, 0, 0.08);
+
+  transition: transform 180ms ease-in-out;
+  outline: none;
+}
+
+section.adoption .card-link {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  outline: none;
 }
 
 section.adoption .card-image-wrapper {
@@ -37,26 +45,85 @@ section.adoption .card-image {
 }
 
 section.adoption .card-title {
-  min-height: 3.125rem;
   margin-bottom: 0.25rem;
 }
-section.adoption .card-gender,
-section.adoption .card-age {
+
+section.adoption .card-info {
   color: var(--neutral-60);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+section.adoption .gender,
+section.adoption .age {
+  color: inherit;
+  font-size: inherit;
+}
+
+section.adoption .card-btn {
+  border-radius: 1.5rem;
+  text-transform: capitalize;
+  transition: background-color 100ms linear;
+}
+
+section.adoption .card-btn .icon {
+  fill: var(--secondary-color-80);
+
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+
+  transform: translateY(-50%);
+
+  opacity: 0;
+  transition: opacity 150ms linear;
 }
 
 @media (min-width: 768px) {
   section.adoption .card {
-    flex-basis: calc((100% - 24px) / 3);
+    flex-basis: calc((100% - (0.75rem * 2)) / 3);
+  }
+
+  section.adoption .card-title {
+    min-height: 2.5rem;
   }
 }
 
 @media (min-width: 991px) {
   section.adoption .new-catalog {
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   section.adoption .card {
-    flex-basis: calc((100% - 60px) / 4);
+    flex-basis: calc((100% - (1.25rem * 3)) / 4);
+  }
+
+  section.adoption .card:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+  }
+
+  section.adoption .card-title {
+    min-height: 2.875rem;
+  }
+
+  section.adoption .card-btn {
+    position: relative;
+  }
+
+  section.adoption .card-link:hover .card-btn,
+  section.adoption .card:focus .card-btn {
+    background-color: var(--primary-color-80);
+    cursor: pointer;
+  }
+
+  section.adoption .card-link:hover .card-btn .icon,
+  section.adoption .card:focus .card-btn .icon {
+    opacity: 1;
+  }
+
+  section.adoption .card:hover,
+  section.adoption .card:focus {
+    transform: translateY(-0.65rem);
   }
 }

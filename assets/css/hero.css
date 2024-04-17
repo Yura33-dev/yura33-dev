@@ -88,6 +88,7 @@ section.hero .hero-title-decoration {
 
 section.hero .hero-description {
   max-width: 31.25rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
@@ -100,6 +101,24 @@ section.hero .hero-animal-image {
   transform: translateX(-50%);
 
   transition: left 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+section.hero .hero-btn {
+  display: flex;
+  position: relative;
+}
+
+section.hero .btn-link {
+  flex-basis: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  outline: none;
+}
+
+section.hero .pet-1,
+section.hero .pet-2 {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -131,6 +150,10 @@ section.hero .hero-animal-image {
 
   section.hero .hero-animal-image {
     transform: none;
+  }
+
+  section.hero .btn-link {
+    flex-basis: 30%;
   }
 }
 
@@ -170,12 +193,44 @@ section.hero .hero-animal-image {
   }
 
   section.hero .hero-description {
-    margin-top: 1.5rem;
     font-size: 1rem;
   }
 
   section.hero .hero-animal-image {
     left: 35%;
     bottom: -7.125rem;
+  }
+
+  section.hero .icon {
+    display: block;
+    position: absolute;
+    z-index: 1;
+
+    transition: transform 200ms ease-in-out;
+  }
+
+  section.hero .pet-1 {
+    top: -5px;
+    left: 23%;
+  }
+
+  section.hero .pet-2 {
+    top: 0;
+    left: 10px;
+  }
+
+  section.hero .btn-link:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+    outline-offset: 0.1rem;
+  }
+
+  section.hero .btn-link:hover ~ .pet-1 {
+    transform: translateY(-20px) translateX(60px) rotate(15deg);
+  }
+
+  section.hero .btn-link:hover ~ .pet-2 {
+    transform: translateY(40px) rotate(-15deg);
   }
 }

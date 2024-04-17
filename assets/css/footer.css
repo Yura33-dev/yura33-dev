@@ -35,6 +35,7 @@ footer.footer .subscribe-input {
   margin-bottom: 0.65rem;
   border: 1px solid var(--neutral-40);
   border-radius: 0.5rem;
+  outline: none;
 }
 
 footer.footer .subscribe-input::placeholder {
@@ -47,6 +48,8 @@ footer.footer .subscribe-input::placeholder {
 footer.footer .subscribe-submit {
   width: 100%;
   border-radius: 0.5rem;
+  outline: none;
+  transition: background-color 100ms linear;
 }
 
 footer.footer .footer-nav {
@@ -65,6 +68,7 @@ footer.footer .nav {
 footer.footer .nav-link {
   font-size: 1rem;
   color: var(--neutral-100);
+  transition: color 100ms linear;
 }
 
 footer.footer .footer-social {
@@ -80,9 +84,11 @@ footer.footer .social-item {
 
 footer.footer .social-link {
   display: flex;
+  padding: 0.5rem;
 }
 
 footer.footer .icon {
+  fill: var(--primary-color);
 }
 
 footer.footer .hr {
@@ -112,6 +118,8 @@ footer.footer .footer-rights {
 footer.footer .footer-rights a,
 footer.footer .footer-monito {
   color: var(--neutral-60);
+  transition: color 100ms linear;
+  outline: none;
 }
 
 footer.footer .footer-monito {
@@ -151,12 +159,14 @@ footer.footer .footer-monito {
   footer.footer .footer-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2.5rem;
   }
 
   footer.footer .footer-nav,
   footer.footer .footer-social {
     margin-bottom: 0;
+    outline: none;
   }
 
   footer.footer .footer-logo-wrapper {
@@ -186,5 +196,61 @@ footer.footer .footer-monito {
     order: 0;
 
     font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 991px) {
+  footer.footer .subscribe-input:focus,
+  footer.footer .subscribe-submit:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+  }
+
+  footer.footer .subscribe-submit:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-80);
+  }
+
+  footer.footer .nav-link {
+    padding: 0.5rem;
+  }
+
+  footer.footer .nav-link:focus,
+  footer.footer .social-link:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+    outline-offset: 0.3rem;
+  }
+
+  footer.footer .nav-link:hover {
+    color: var(--orange-shine);
+  }
+
+  footer.footer .social-link:hover .icon {
+    fill: var(--orange-shine);
+  }
+
+  footer.footer .footer-logotype {
+    padding: 0.75rem;
+    outline: none;
+  }
+
+  footer.footer .footer-logotype:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+  }
+
+  footer.footer .footer-rights a:hover {
+    color: var(--orange-shine);
+  }
+
+  footer.footer .footer-rights a:focus {
+    outline-width: 2px;
+    outline-color: var(--orange-shine);
+    outline-style: solid;
+    outline-offset: 0.35rem;
   }
 }
