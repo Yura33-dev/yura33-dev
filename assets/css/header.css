@@ -54,23 +54,6 @@
   fill: var(--primary-color);
 }
 
-.header .cart-btn {
-  padding: 0.5rem;
-  background: transparent;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header .cart-btn .icon {
-  fill: transparent;
-  stroke: var(--primary-color);
-}
-
-@media (min-width: 768px) {
-}
-
 @media (min-width: 991px) {
   .header .header-nav {
     display: flex;
@@ -83,6 +66,67 @@
 
   .header a {
     transition: color 100ms linear;
+  }
+
+  .header .cart-btn {
+    padding: 0.5rem;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+
+  .header .cart-btn::after {
+    content: '0';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--orange-shine);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  @keyframes cartJump {
+    0% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-8px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    80% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .header .cart-btn:hover::after {
+    animation: cartJump 600ms linear;
+  }
+
+  .header .cart-btn .icon {
+    fill: transparent;
+    stroke: var(--primary-color);
+
+    position: relative;
+    z-index: 1;
   }
 
   .header .cart-btn:focus-visible,
