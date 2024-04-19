@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/pages/indexPage.css" />
   </head>
 
   <body>
@@ -718,6 +718,201 @@
       </div>
     </div>
 
-    <script defer type="module" src="./assets/js/main.js"></script>
+    <div class="cart-overlay">
+      <div class="cart">
+        <div class="cart-header">
+          <p class="cart-title">Cart</p>
+          <button type="button" class="cart-close">
+            <svg class="icon close-icon" width="15" height="15">
+              <use href="./assets/images/icons.svg#close-icon"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="cart-content">
+          <div class="cart-product">
+            <div class="cart-product-info">
+              <a href="#!" class="product-image-link">
+                <img
+                  src="./assets/images/adoption/puppy-12.jpg"
+                  alt="test"
+                  class="product-image"
+                />
+              </a>
+
+              <a href="#!" class="product-title-link"
+                ><p class="product-title">
+                  Cat scratching ball toy kitten sisal rope ball
+                </p></a
+              >
+
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input type="number" name="amount" value="2" />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>69.45
+              </p>
+            </div>
+          </div>
+
+          <div class="cart-product">
+            <div class="cart-product-info">
+              <a href="#!" class="product-image-link">
+                <img
+                  src="./assets/images/adoption/puppy-11.jpg"
+                  alt="test"
+                  class="product-image"
+                />
+              </a>
+
+              <a href="#!" class="product-title-link"
+                ><p class="product-title">
+                  Reflex Plus Adult Cat Food Salmon
+                </p></a
+              >
+
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input
+                    type="number"
+                    name="amount"
+                    value="1"
+                    step="1"
+                    max="999"
+                  />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>10.99
+              </p>
+            </div>
+          </div>
+
+          <div class="cart-product">
+            <div class="cart-product-info">
+              <a href="#!" class="product-image-link">
+                <img
+                  src="./assets/images/adoption/puppy-10.jpg"
+                  alt="test"
+                  class="product-image"
+                />
+              </a>
+
+              <a href="#!" class="product-title-link"
+                ><p class="product-title">Cute Pet Cat Warm Nest</p></a
+              >
+
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input
+                    type="number"
+                    name="amount"
+                    value="3"
+                    step="1"
+                    max="999"
+                  />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>24.55
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-footer">
+          <p class="card-total">
+            <span class="card-price-total">Cart:</span
+            ><span class="price-currency">$</span>108.31
+          </p>
+          <a
+            href="./checkout.html"
+            class="cart-checkout btn-link btn-link-bg-transparent mobile"
+          >
+            Let's Checkout
+            <svg class="icon" width="24px" height="24px">
+              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+            </svg>
+          </a>
+
+          <a
+            href="./checkout.html"
+            class="cart-checkout btn-link btn-link-bg-transparent desktop"
+          >
+            Let's Checkout
+            <svg class="icon" width="24px" height="24px">
+              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script defer type="module" src="./assets/js/common.js"></script>
   </body>
 </html>
