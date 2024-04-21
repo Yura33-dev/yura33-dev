@@ -7,6 +7,7 @@ export default function cart() {
     const cartBtnClose = document.querySelector('button.cart-close');
 
     const cartOverlay = document.querySelector('.cart-overlay');
+    const mobileMenuOverlay = document.querySelector('.mobile-overlay');
 
     cartBtn.addEventListener('click', () => {
       cartOverlay.classList.add('cart-active');
@@ -14,6 +15,7 @@ export default function cart() {
 
     cartMobileBtn.addEventListener('click', () => {
       cartOverlay.classList.add('cart-active');
+      mobileMenuOverlay.classList.toggle('is-open');
     });
 
     cartBtnClose.addEventListener('click', () => {

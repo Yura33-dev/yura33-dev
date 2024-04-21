@@ -158,6 +158,18 @@ p {
   color: var(--neutral-100);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(100%);
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: 3rem;

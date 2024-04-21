@@ -3,68 +3,691 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catalog Page</title>
+    <title>Monito | Products page</title>
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png"
+      href="./assets/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
+      href="./assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
+      href="./assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/pages/catalogPage.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Головна</a></li>
-          <li><a href="./about.html">Про нас</a></li>
-          <li><a href="./catalog.html">Каталог</a></li>
-          <li><a href="./contact.html">Контакти</a></li>
-        </ul>
-      </nav>
-      <h1>Каталог</h1>
+    <header class="header">
+      <div class="container">
+        <a href="./index.html" class="header-logotype">
+          <svg width="115" height="40" class="icon">
+            <use href="./assets/images/icons.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <nav class="header-nav">
+          <ul class="header-menu-list">
+            <li class="header-menu-item">
+              <a href="./index.html" class="header-menu-link">Home</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="./catalog.html" class="header-menu-link">Products</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="./adopt.html" class="header-menu-link">Adoption</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="./catalog.html" class="header-menu-link">Contact</a>
+            </li>
+          </ul>
+
+          <button class="cart-btn">
+            <svg class="icon" width="23" height="23">
+              <use href="./assets/images/icons.svg#cart-icon"></use>
+            </svg>
+          </button>
+        </nav>
+
+        <button class="burger-btn">
+          <svg width="30" height="25" class="icon">
+            <use href="./assets/images/icons.svg#burger-icon"></use>
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <aside>
-      <h2 class="text-uppercase">Categories</h2>
+    <aside class="mobile-aside">
+      <div class="container">
+        <div class="aside-content">
+          <div class="filter">
+            <button type="button" class="filter-btn">
+              <svg class="icon" width="25px" height="25px">
+                <use href="./assets/images/icons.svg#filter-icon"></use>
+              </svg>
+              Filter
+            </button>
+          </div>
 
-      <div class="bg-dark text-white">
-        <strong class="text-uppercase">Fashion &amp; Acc</strong>
+          <div class="sort">
+            <select name="sorting" id="sorting" class="select-sort">
+              <option value="popular">Sort by: Popular</option>
+              <option value="price-desc">Sort by: Price (desc)</option>
+              <option value="price-asc">Sort by: Price (asc)</option>
+              <option value="name-desc">Sort by: Name (desc)</option>
+              <option value="name-asc">Sort by: Name (asc)</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-content">
+          <div class="filter-option">
+            <div class="filter-name">Type</div>
+            <ul class="filter-values">
+              <li class="filter-value">
+                <input
+                  id="type"
+                  name="type"
+                  type="checkbox"
+                  class="visually-hidden"
+                  value="true"
+                />
+                <label for="type">
+                  <span class="custom-checkbox">
+                    <svg width="10" height="8" class="icon">
+                      <use href="./assets/images/icons.svg#done-icon"></use>
+                    </svg>
+                  </span>
+                  <div class="text-wrapper">Food</div>
+                </label>
+              </li>
+              <li class="filter-value">
+                <input
+                  id="type2"
+                  name="type"
+                  type="checkbox"
+                  class="visually-hidden"
+                  value="true"
+                />
+                <label for="type2" style="display: flex; gap: 5px">
+                  <span class="custom-checkbox">
+                    <svg width="10" height="8" class="icon">
+                      <use href="./assets/images/icons.svg#done-icon"></use>
+                    </svg>
+                  </span>
+                  <div class="text-wrapper">Toy</div>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="filter-option">
+            <div class="filter-name">Price</div>
+            <ul class="filter-values">
+              <li class="filter-value">
+                <input
+                  id="min-price"
+                  name="min-price"
+                  type="number"
+                  placeholder="min price"
+                  class="price-input-filter"
+                />
+              </li>
+              <li class="filter-value">
+                <input
+                  id="max-price"
+                  name="max-price"
+                  type="number"
+                  placeholder="max price"
+                  class="price-input-filter"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <ul class="list-unstyled categories">
-        <li><a href="#!">Women's T-Shirts</a></li>
-        <li><a href="#!">Men's T-Shirts</a></li>
-        <li><a href="#!">Dresses</a></li>
-        <li><a href="#!">Novelty socks</a></li>
-        <li><a href="#!">Women's sunglasses</a></li>
-        <li><a href="#!">Men's sunglasses</a></li>
-      </ul>
     </aside>
 
-    <footer>
-      <nav>
-        <ul>
-          <li><a href="https://google.com.ua" target="_blank">Google</a></li>
-          <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+    <main>
+      <section class="products">
+        <div class="container">
+          <div class="section-header">
+            <div class="wrapper">
+              <h2 class="section-title">Our products</h2>
+            </div>
+          </div>
+
+          <ul class="products-catalog">
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-1@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Reflex Plus Adult Cat Food Salmon</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Dog Food</span>
+                  </div>
+                  <div class="product-type">
+                    <span class="type-key">Size:</span
+                    ><span class="type-value">385g</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  10.00
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-2@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Reflex Plus Adult Cat Food Salmon</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Cat Food</span>
+                  </div>
+                  <div class="product-type">
+                    <span class="type-key">Size:</span
+                    ><span class="type-value">1500 g</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  15.30
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-3@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">
+                  Cat scratching ball toy kitten sisal rope ball
+                </h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  32.10
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-4@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Cute Pet Cat Warm Nest</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  24.40
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-5@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Cute Pet Cat Warm Nest</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  24.40
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-6@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Cute Pet Cat Warm Nest</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  24.40
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-7@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Cute Pet Cat Warm Nest</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  24.40
+                </div>
+              </a>
+            </li>
+
+            <li class="product-card" tabindex="0">
+              <a href="#!" class="product-link" tabindex="-1">
+                <div class="product-image-wrapper">
+                  <img
+                    src="./assets/images/products/product-8@1.jpg"
+                    alt="puppy 1"
+                    class="product-image"
+                  />
+                </div>
+                <h3 class="product-title">Cute Pet Cat Warm Nest</h3>
+                <div class="product-types">
+                  <div class="product-type">
+                    <span class="type-key">Product:</span
+                    ><span class="type-value">Toy</span>
+                  </div>
+                </div>
+                <div class="product-price">
+                  <span class="price-currency">$</span>
+                  24.40
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <form class="subscribe-form">
+        <h2 class="subscribe-title">Subscribe now!</h2>
+        <div class="subscribe-wrapper">
+          <input
+            class="subscribe-input"
+            type="email"
+            name="email"
+            placeholder="Enter your Email"
+            required
+          />
+          <button type="submit" class="subscribe-submit">Subscribe now</button>
+        </div>
+      </form>
+
+      <div class="footer-wrapper">
+        <nav class="footer-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./catalog.html"> Products </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./adopt.html"> Adoption </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html"> Contact </a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="footer-social">
+          <li class="social-item">
+            <a class="social-link" href="#!"
+              ><svg class="icon" width="20" height="20">
+                <use href="./assets/images/icons.svg#facebook-icon"></use></svg
+            ></a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="#!"
+              ><svg class="icon" width="20" height="20">
+                <use href="./assets/images/icons.svg#twitter-icon"></use></svg
+            ></a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="#!">
+              <svg class="icon" width="20" height="20">
+                <use href="./assets/images/icons.svg#instagram-icon"></use></svg
+            ></a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="#!"
+              ><svg class="icon" width="20" height="20">
+                <use href="./assets/images/icons.svg#youtube-icon"></use></svg
+            ></a>
+          </li>
         </ul>
-      </nav>
-      <p>&copy; 2024 All rights reserved.</p>
+      </div>
+
+      <hr class="hr" />
+
+      <div class="footer-logo-wrapper">
+        <a href="./index.html" class="footer-logotype">
+          <svg width="115" height="40" class="icon">
+            <use href="./assets/images/icons.svg#logo-icon"></use>
+          </svg>
+        </a>
+
+        <ul class="footer-rights">
+          <li><a href="!#">Terms of Service</a></li>
+          <li><a href="!#">Privacy Policy</a></li>
+        </ul>
+
+        <p class="footer-monito">&copy; 2024 Monito. Final project QALight</p>
+      </div>
     </footer>
+
+    <div class="mobile-overlay">
+      <div class="mobile-menu">
+        <button type="button" class="mobile-menu-close">
+          <svg class="icon close-icon" width="15" height="15">
+            <use href="./assets/images/icons.svg#close-icon"></use>
+          </svg>
+        </button>
+
+        <nav class="mobile-nav">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="./index.html" class="menu-link">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="./catalog.html" class="menu-link">Products</a>
+            </li>
+            <li class="menu-item">
+              <a href="./adopt.html" class="menu-link">Adoption</a>
+            </li>
+            <li class="menu-item">
+              <a href="./contact.html" class="menu-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button type="button" class="cart-mobile-btn">
+          Cart
+          <svg class="icon" width="30" height="30">
+            <use href="./assets/images/icons.svg#cart-icon"></use>
+          </svg>
+        </button>
+
+        <div class="mobile-image">
+          <img src="./assets/images/dog-cart.gif" alt="Dog" />
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-overlay">
+      <div class="cart">
+        <div class="cart-header">
+          <p class="cart-title">Cart</p>
+          <button type="button" class="cart-close">
+            <svg class="icon close-icon" width="15" height="15">
+              <use href="./assets/images/icons.svg#close-icon"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="cart-content">
+          <div class="product" tabindex="0">
+            <div class="product-info">
+              <div class="product-cart-link">
+                <a href="#!" class="product-image-link">
+                  <img
+                    src="./assets/images/adoption/puppy-12.jpg"
+                    alt="test"
+                    class="product-cart-image"
+                  />
+                </a>
+
+                <a href="#!" class="product-title-link"
+                  ><p class="product-cart-title">
+                    Cat scratching ball toy kitten sisal rope ball
+                  </p></a
+                >
+              </div>
+
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input type="number" name="amount" value="2" />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>69.45
+              </p>
+            </div>
+          </div>
+
+          <div class="product" tabindex="0">
+            <div class="product-info">
+              <div class="product-cart-link">
+                <a href="#!" class="product-image-link">
+                  <img
+                    src="./assets/images/adoption/puppy-11.jpg"
+                    alt="test"
+                    class="product-cart-image"
+                  />
+                </a>
+
+                <a href="#!" class="product-title-link"
+                  ><p class="product-cart-title">
+                    Reflex Plus Adult Cat Food Salmon
+                  </p></a
+                >
+              </div>
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input
+                    type="number"
+                    name="amount"
+                    value="1"
+                    step="1"
+                    max="999"
+                  />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>10.99
+              </p>
+            </div>
+          </div>
+
+          <div class="product" tabindex="0">
+            <div class="product-info">
+              <div class="product-cart-link">
+                <a href="#!" class="product-image-link">
+                  <img
+                    src="./assets/images/adoption/puppy-10.jpg"
+                    alt="test"
+                    class="product-cart-image"
+                  />
+                </a>
+
+                <a href="#!" class="product-title-link"
+                  ><p class="product-cart-title">Cute Pet Cat Warm Nest</p></a
+                >
+              </div>
+
+              <button type="button" class="product-delete">
+                <svg width="20" height="20" class="icon">
+                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="product-data">
+              <div class="product-counter">
+                <button type="button" class="product-minus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                  </svg>
+                </button>
+
+                <div class="product-counter-input">
+                  <input
+                    type="number"
+                    name="amount"
+                    value="3"
+                    step="1"
+                    max="999"
+                  />
+                </div>
+
+                <button type="button" class="product-plus">
+                  <svg width="15" height="15">
+                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="product-price">
+                <span class="price-currency">$</span>24.55
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-footer">
+          <p class="cart-total">
+            <span class="cart-price-total">Cart:</span
+            ><span class="price-currency">$</span>108.31
+          </p>
+          <a
+            href="./checkout.html"
+            class="cart-checkout btn-link btn-link-bg-transparent mobile"
+          >
+            Let's Checkout
+            <svg class="icon" width="24px" height="24px">
+              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+            </svg>
+          </a>
+
+          <a
+            href="./checkout.html"
+            class="cart-checkout btn-link btn-link-bg-transparent desktop"
+          >
+            Let's Checkout
+            <svg class="icon" width="24px" height="24px">
+              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script defer type="module" src="./assets/js/common.js"></script>
+    <script defer type="module" src="./assets/js/pages/catalogPage.js"></script>
   </body>
 </html>

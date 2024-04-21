@@ -1,0 +1,138 @@
+/* Mobile filter & sorting */
+aside.mobile-aside {
+  padding-top: 1rem;
+}
+
+aside.mobile-aside .aside-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside.mobile-aside .filter-btn {
+  background-color: transparent;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+aside.mobile-aside .filter-btn .icon {
+  fill: none;
+  stroke: var(--primary-color);
+  transition: stroke 100ms linear;
+}
+
+aside.mobile-aside .filter-content {
+  overflow: hidden;
+  max-height: 0;
+
+  transition: max-height 150ms linear;
+}
+
+aside.mobile-aside .filter-option {
+  padding: 0.7rem 0 0.7rem 0;
+}
+
+aside.mobile-aside .filter-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+}
+
+aside.mobile-aside .filter-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+aside.mobile-aside .filter-value label {
+  display: flex;
+  gap: 5px;
+}
+
+aside.mobile-aside .price-input-filter {
+  padding: 0.5rem;
+  border: 1px solid var(--neutral-60);
+  border-radius: 5px;
+
+  width: 40%;
+}
+
+aside.mobile-aside .price-input-filter::placeholder {
+  font-size: 0.75rem;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 200ms linear, border 200ms linear;
+}
+
+.custom-checkbox .icon {
+  fill: transparent;
+}
+
+.visually-hidden:checked + label > .custom-checkbox {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.visually-hidden:checked + label > .custom-checkbox .icon {
+  fill: var(--neutral-00);
+}
+
+/* sort */
+
+aside.mobile-aside .sort-label {
+  font-size: 0.85rem;
+  margin-right: 0.4rem;
+}
+
+aside.mobile-aside .select-sort {
+  min-height: 30px;
+  padding: 0.5rem;
+
+  font-size: 0.85rem;
+  color: var(--neutral-60);
+
+  border: 1px solid var(--neutral-20);
+  border-radius: 5px;
+}
+
+@media (min-width: 991px) {
+  aside.mobile-aside .filter-btn:hover {
+    cursor: pointer;
+  }
+
+  aside.mobile-aside .filter-btn:hover .icon {
+    stroke: var(--orange-shine);
+  }
+  aside.mobile-aside .filter-btn {
+    font-size: 1.45rem;
+  }
+
+  aside.mobile-aside .filter-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  aside.mobile-aside .price-input-filter {
+    width: 100%;
+  }
+}
+
+/* Desktop filter & sorting */
