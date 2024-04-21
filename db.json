@@ -9,7 +9,9 @@
         "subtype": "Dog Food",
         "weight": 385
       },
-      "rating": 4
+      "rating": 4,
+      "slug": "reflex-plus-adult-cat-food-salmon-small",
+      "image": "./assets/images/products/product-1@1.jpg"
     },
     {
       "title": "Reflex Plus Adult Cat Food Salmon",
@@ -20,7 +22,9 @@
         "subtype": "Cat Food",
         "weight": 1500
       },
-      "rating": 5
+      "rating": 5,
+      "slug": "reflex-plus-adult-cat-food-salmon-big",
+      "image": "./assets/images/products/product-2@1.jpg"
     },
     {
       "title": "Cat scratching ball toy kitten sisal rope ball",
@@ -31,7 +35,9 @@
         "subtype": "Cat Toy",
         "weight": null
       },
-      "rating": 5
+      "rating": 5,
+      "slug": "cat-scratching-ball-toy-kitten-sisal-rope-ball",
+      "image": "./assets/images/products/product-3@1.jpg"
     },
     {
       "title": "Cute Pet Cat Warm Nest",
@@ -42,10 +48,12 @@
         "subtype": "Cat Toy",
         "weight": null
       },
-      "rating": 4
+      "rating": 4,
+      "slug": "cute-pet-cat-warm-nest",
+      "image": "./assets/images/products/product-4@1.jpg"
     },
     {
-      "title": "NaturVet Dogs - Omega-Gold Plus Salmon Oil",
+      "title": "NaturVet Dogs Omega-Gold Plus Salmon Oil",
       "description": "product 5 description",
       "price": 45.25,
       "options": {
@@ -53,7 +61,9 @@
         "subtype": "Dog Food",
         "weight": 385
       },
-      "rating": 5
+      "rating": 5,
+      "slug": "naturvet-dogs-omega-gold-plus-salmon-oil",
+      "image": "./assets/images/products/product-5@1.jpg"
     },
     {
       "title": "Costumes Fashion Pet Clother Cowboy Rider",
@@ -64,7 +74,9 @@
         "subtype": "Dog Clothes",
         "weight": null
       },
-      "rating": 4
+      "rating": 4,
+      "slug": "costumes-fashion-pet-clother-cowboy-rider",
+      "image": "./assets/images/products/product-6@1.jpg"
     },
     {
       "title": "Costumes Chicken Drumstick Headband",
@@ -75,7 +87,9 @@
         "subtype": "Cat Clothes",
         "weight": null
       },
-      "rating": 2
+      "rating": 2,
+      "slug": "costumes-fashion-pet-clother-chicken-drumstick",
+      "image": "./assets/images/products/product-7@1.jpg"
     },
     {
       "title": "Plush Pet Toy",
@@ -86,7 +100,9 @@
         "subtype": "Dog Toy",
         "weight": null
       },
-      "rating": 2
+      "rating": 2,
+      "slug": "plush-pet-toy",
+      "image": "./assets/images/products/product-8@1.jpg"
     }
   ]
 }
