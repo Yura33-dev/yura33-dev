@@ -1,64 +1,93 @@
 'use strict';
-
 import filter from './../components/filter.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-  filter();
   getProducts();
+  filter();
 });
 
-const api = 'https://my-json-server.typicode.com/Yura33-dev/yura33-de';
+const api = 'https://my-json-server.typicode.com/Yura33-dev/yura33-dev';
+let products = [];
 
 async function getProducts() {
   try {
     const response = await fetch(`${api}/products`);
-    const products = await response.json();
+    products = await response.json();
 
     if (products.status > 299) {
       throw new Error('Error with getting products');
     } else {
-      console.log(products);
+      renderTemplate(products);
+      window.localStorage.setItem('products', JSON.stringify(products));
     }
   } catch (error) {
     console.log(error);
   }
 }
 
-function buildTemplate(products) {
+export function renderTemplate(products) {
   const productsCatalog = document.querySelector('.products-catalog');
+  // !!!!!!
+  productsCatalog.innerHTML = '';
 
   products.map(product => {
     const li = document.createElement('li');
     li.classList.add('product-card');
-    li.setAttribute(tabindex, 0);
+    li.setAttribute('tabindex', 0);
 
-    const productCard = ``;
+    const productOptions = getProductOptions(product.options);
+    li.innerHTML = renderProductCard(product, productOptions);
+
+    productsCatalog.appendChild(li);
   });
+}
 
-  //   <li class="product-card" tabindex="0">
-  //   <a href="#!" class="product-link" tabindex="-1">
-  //     <div class="product-image-wrapper">
-  //       <img
-  //         src="./assets/images/products/product-1@1.jpg"
-  //         alt="puppy 1"
-  //         class="product-image"
-  //       />
-  //     </div>
-  //     <h3 class="product-title">Reflex Plus Adult Cat Food Salmon</h3>
-  //     <div class="product-types">
-  //       <div class="product-type">
-  //         <span class="type-key">Product:</span
-  //         ><span class="type-value">Dog Food</span>
-  //       </div>
-  //       <div class="product-type">
-  //         <span class="type-key">Size:</span
-  //         ><span class="type-value">385g</span>
-  //       </div>
-  //     </div>
-  //     <div class="product-price">
-  //       <span class="price-currency">$</span>
-  //       10.00
-  //     </div>
-  //   </a>
-  // </li>
+function getProductOptions(options) {
+  let result = '';
+
+  for (const option in options) {
+    const transformedOption =
+      option.slice(0, 1).toUpperCase() + option.slice(1);
+
+    let item = '';
+
+    if (options[option]) {
+      item = `
+            <div class="product-type">
+            <span class="type-key">${transformedOption}:</span>
+            <span class="type-value">${options[option]}</span>
+            </div>`;
+    } else {
+      item = '';
+    }
+
+    result += item;
+  }
+
+  return result;
+}
+
+function renderProductCard(product, options) {
+  return `
+    <a href="./products/${
+      product.slug
+    }.html" class="product-link" tabindex="-1">
+        <div class="product-image-wrapper">
+        <img
+            src="${product.image}"
+            alt="${product.title}"
+            class="product-image"
+        />
+        </div>
+        <h3 class="product-title">${product.title}</h3>
+
+        <div class="product-types">
+            ${options}
+        </div>
+
+        <div class="product-price">
+        <span class="price-currency">$</span>
+        ${product.price.toFixed(2)}
+        </div>
+    </a>`;
 }
