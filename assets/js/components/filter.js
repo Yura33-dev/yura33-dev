@@ -3,42 +3,23 @@
 import { renderTemplate } from '../pages/catalogPage.js';
 
 const filterObj = {
-  minPrice: '',
-  maxPrice: '',
+  minPrice: 0,
+  maxPrice: 0,
+  defaultMinPrice: 0,
+  defaultMaxPrice: 0,
   categories: [],
+  filteredProducts: [],
 };
 
-let globalFilteredProducts = [];
-
-export default function filter() {
-  const filterMobileBtn = document.querySelector('button.filter-btn');
+export default function filter(products) {
+  const filterOpenBtn = document.querySelector('button.filter-btn');
   const filterContent = document.querySelector('.filter-content');
+  const filterResetBtn = document.querySelector('.filter-reset');
 
-  const products = JSON.parse(window.localStorage.getItem('products'));
-  initFilter(filterContent, products);
-
-  filterMobileBtn.addEventListener('click', () => filterToggle(filterContent));
-
-  const categoriesInputs = document.querySelectorAll(
-    '.filter-categories input'
-  );
-
-  categoriesInputs.forEach(input =>
-    input.addEventListener('change', e => filteredCategory(e, products))
-  );
-
-  const priceInputs = document.querySelectorAll('.price-input-filter');
-  priceInputs.forEach(input =>
-    input.addEventListener('change', e => {
-      e.target.name === 'minPrice'
-        ? (filterObj.minPrice = +e.target.value)
-        : (filterObj.maxPrice = +e.target.value);
-      filteredPrice(globalFilteredProducts);
-    })
-  );
+  initFilter(filterContent, filterOpenBtn, filterResetBtn, products);
 }
 
-function initFilter(filterContent, products) {
+function initFilter(filterContent, filterOpenBtn, filterResetBtn, products) {
   const minPrice = products.reduce((firstObj, secondObj) => {
     return secondObj.price < firstObj.price ? secondObj : firstObj;
   }, products[0]);
@@ -47,61 +28,29 @@ function initFilter(filterContent, products) {
     return secondObj.price > firstObj.price ? secondObj : firstObj;
   }, products[0]);
 
-  filterObj.minPrice = minPrice.price;
-  filterObj.maxPrice = maxPrice.price;
+  filterObj.defaultMinPrice = minPrice.price;
+  filterObj.defaultMaxPrice = maxPrice.price;
+  filterObj.minPrice = filterObj.defaultMinPrice;
+  filterObj.maxPrice = filterObj.defaultMaxPrice;
 
-  const filteredUniqueCategories = new Set();
-  products.forEach(product => filteredUniqueCategories.add(product.category));
+  const getUniqueCategories = new Set();
+  products.forEach(product => getUniqueCategories.add(product.category));
 
   const productCategories = [];
-  filteredUniqueCategories.forEach(category =>
-    productCategories.push(category)
-  );
+  getUniqueCategories.forEach(category => productCategories.push(category));
 
   const filterCategories = generateFilterCategories(productCategories);
-  filterContent.appendChild(filterCategories);
+  filterContent.firstElementChild.appendChild(filterCategories);
 
-  const filterPrice = generateFilterPrice({
-    minPrice: minPrice.price,
-    maxPrice: maxPrice.price,
-  });
-  filterContent.appendChild(filterPrice);
+  const filterPrice = generateFilterPrice(filterObj);
+  filterContent.firstElementChild.appendChild(filterPrice);
 
-  globalFilteredProducts = products;
+  enableFilterButtons(filterOpenBtn, filterContent, filterResetBtn, products);
+  enableFilterInputs(products);
 
-  console.log(globalFilteredProducts);
-}
+  getStorageCategories();
 
-function generateFilterPrice({ minPrice, maxPrice }) {
-  const filterPrice = document.createElement('div');
-  filterPrice.classList.add('filter-price', 'filter-option');
-
-  filterPrice.innerHTML = `
-    <div class="filter-name">Price</div>
-    <ul class="filter-values">
-        <li class="filter-value">
-            <input
-                id="minPrice"
-                name="minPrice"
-                type="number"
-                value="${minPrice}"
-                placeholder="min price"
-                class="price-input-filter"
-            />
-        </li>
-        <li class="filter-value">
-            <input
-                id="maxPrice"
-                name="maxPrice"
-                type="number"
-                value="${maxPrice}"
-                placeholder="max price"
-                class="price-input-filter"
-            />
-        </li>
-    </ul>`;
-
-  return filterPrice;
+  renderTemplate(products);
 }
 
 function generateFilterCategories(productCategories) {
@@ -150,18 +99,105 @@ function generateFilterCategory(category) {
   return categoryItem;
 }
 
+function generateFilterPrice({ defaultMinPrice, defaultMaxPrice }) {
+  const filterPrice = document.createElement('div');
+  filterPrice.classList.add('filter-price', 'filter-option');
+
+  filterPrice.innerHTML = `
+    <div class="filter-name">Price</div>
+    <ul class="filter-values">
+        <li class="filter-value">
+            <input
+                id="minPrice"
+                name="minPrice"
+                type="number"
+                value="${defaultMinPrice}"
+                placeholder="min price"
+                class="price-input-filter"
+            />
+        </li>
+        <li class="filter-value">
+            <input
+                id="maxPrice"
+                name="maxPrice"
+                type="number"
+                value="${defaultMaxPrice}"
+                placeholder="max price"
+                class="price-input-filter"
+            />
+        </li>
+    </ul>`;
+
+  return filterPrice;
+}
+
+function enableFilterButtons(
+  filterOpenBtn,
+  filterContent,
+  filterResetBtn,
+  products
+) {
+  const categoriesInputs = document.querySelectorAll(
+    '.filter-categories input'
+  );
+
+  const priceInputs = document.querySelectorAll('.filter-price input');
+
+  filterOpenBtn.addEventListener('click', () =>
+    filterToggle(filterContent, filterResetBtn)
+  );
+
+  filterResetBtn.addEventListener('click', () =>
+    resetFilter(products, categoriesInputs, priceInputs)
+  );
+}
+
+function enableFilterInputs(products) {
+  const categoriesInputs = document.querySelectorAll(
+    '.filter-categories input'
+  );
+
+  const priceInputs = document.querySelectorAll('.filter-price input');
+
+  categoriesInputs.forEach(input =>
+    input.addEventListener('change', e => filteredCategory(e, products))
+  );
+
+  priceInputs.forEach(input =>
+    input.addEventListener('change', e => {
+      e.target.name === 'minPrice'
+        ? (filterObj.minPrice = +e.target.value)
+        : (filterObj.maxPrice = +e.target.value);
+      filteredPrice(filterObj.filteredProducts);
+    })
+  );
+}
+
 function filterToggle(filterContent) {
   if (filterContent.classList.contains('filter-content-open')) {
-    filterContent.style = '';
-    filterContent.classList.remove('filter-content-open');
+    filterClose(filterContent);
   } else {
-    filterContent.classList.add('filter-content-open');
-    const options = filterContent.querySelectorAll('.filter-option');
-    let totalHeight = 0;
-    options.forEach(option => (totalHeight += option.offsetHeight));
-
-    filterContent.style.maxHeight = totalHeight + 'px';
+    filterOpen(filterContent);
   }
+}
+
+function filterClose(filterContent) {
+  filterContent.style = '';
+  filterContent.classList.remove('filter-content-open');
+  setStorageFilter(false, filterObj.categories);
+}
+
+function filterOpen(filterContent) {
+  const filterResetBtn = document.querySelector('.filter-reset');
+
+  filterContent.classList.add('filter-content-open');
+  const options = filterContent.querySelectorAll('.filter-option');
+  let totalHeight = 0;
+  options.forEach(option => (totalHeight += option.offsetHeight));
+  totalHeight += filterResetBtn.offsetHeight;
+
+  filterContent.style.maxHeight = totalHeight + 20 + 'px';
+  setStorageFilter(true, filterObj.categories);
 }
 
 function filteredCategory(e, products) {
@@ -169,21 +205,16 @@ function filteredCategory(e, products) {
 
   if (e.target.checked) {
     filterObj.categories.push(category);
+    filterObj.filteredProducts = [];
 
-    // const filteredProducts = [];
-    globalFilteredProducts = [];
-
-    for (let i = 0; i < filterObj.categories.length; i++) {
-      products.forEach(product => {
+    products.forEach(product => {
+      for (let i = 0; i < filterObj.categories.length; i++) {
         product.category.toLowerCase() === filterObj.categories[i]
-          ? globalFilteredProducts.push(product)
+          ? filterObj.filteredProducts.push(product)
           : null;
-      });
-    }
-
-    // IF CHECK FOR EMPTY ARRAY
-    // renderTemplate(globalFilteredProducts);
-    filteredPrice(globalFilteredProducts);
+      }
+    });
+    filteredPrice(filterObj.filteredProducts);
   } else {
     const index = filterObj.categories.findIndex(
       element => element === category
@@ -191,36 +222,90 @@ function filteredCategory(e, products) {
     filterObj.categories.splice(index, 1);
 
     if (!filterObj.categories.length) {
-      globalFilteredProducts = products;
-      return filteredPrice(globalFilteredProducts);
+      filterObj.filteredProducts = [];
+      return filteredPrice(products);
     }
 
-    // const filteredProducts = [];
-    globalFilteredProducts = [];
-
-    for (let i = 0; i < filterObj.categories.length; i++) {
-      products.forEach(product => {
-        product.category.toLowerCase() === filterObj.categories[i]
-          ? globalFilteredProducts.push(product)
-          : null;
-      });
-    }
-
-    // renderTemplate(globalFilteredProducts);
-    filteredPrice(globalFilteredProducts);
+    const filteredCategoryProducts = filterObj.filteredProducts.filter(
+      product => product.category.toLowerCase() !== category
+    );
+    filterObj.filteredProducts = filteredCategoryProducts;
+    filteredPrice(filterObj.filteredProducts);
   }
 }
 
 function filteredPrice(filteredProducts) {
-  const newProducts = filteredProducts.filter(
+  const priceFilteredProducts = filteredProducts.filter(
     product =>
       product.price >= filterObj.minPrice && product.price <= filterObj.maxPrice
   );
 
-  if (newProducts.length) {
-    renderTemplate(newProducts);
-  } else {
+  if (!priceFilteredProducts.length) {
     const catalog = document.querySelector('.products-catalog');
     catalog.innerHTML = '<h2>No products matched to filter queries</h2>';
+    return;
+  }
+
+  renderTemplate(priceFilteredProducts);
+  setStorageFilter(null, filterObj.categories);
+}
+
+function resetFilter(products, categoriesInputs, priceInputs) {
+  filterObj.filteredProducts = [];
+  filterObj.categories = [];
+  filterObj.minPrice = filterObj.defaultMinPrice;
+  filterObj.maxPrice = filterObj.defaultMaxPrice;
+
+  categoriesInputs.forEach(input => (input.checked = false));
+
+  priceInputs.forEach(input => {
+    input.name === 'minPrice'
+      ? (input.value = filterObj.defaultMinPrice)
+      : (input.value = filterObj.defaultMaxPrice);
+  });
+  renderTemplate(products);
+
+  const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
+  if (storageFilter) {
+    storageFilter.categories = filterObj.categories;
+    window.localStorage.setItem('filter', JSON.stringify(storageFilter));
+  }
+}
+
+function getStorageCategories() {
+  const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
+
+  if (!storageFilter) {
+    window.localStorage.setItem(
+      'filter',
+      JSON.stringify({ state: false, categories: [] })
+    );
+    return null;
+  }
+
+  if (!storageFilter.categories) return null;
+
+  for (let category of storageFilter.categories) {
+    const input = document.getElementById(`filter-${category}`);
+    setTimeout(() => input.click(), 200);
+  }
+
+  if (storageFilter.state) {
+    const filterOpenBtn = document.querySelector('button.filter-btn');
+    setTimeout(() => filterOpenBtn.click(), 200);
+  }
+}
+
+function setStorageFilter(state, categories) {
+  const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
+  if (storageFilter) {
+    state !== null ? (storageFilter.state = state) : null;
+    categories ? (storageFilter.categories = categories) : null;
+    window.localStorage.setItem('filter', JSON.stringify(storageFilter));
+  } else {
+    window.localStorage.setItem(
+      'filter',
+      JSON.stringify({ state, categories: [] })
+    );
   }
 }

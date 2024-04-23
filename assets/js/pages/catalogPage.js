@@ -1,9 +1,9 @@
 'use strict';
 import filter from './../components/filter.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-  getProducts();
-  filter();
+window.addEventListener('DOMContentLoaded', async () => {
+  const products = await getProducts();
+  filter(products);
 });
 
 const api = 'https://my-json-server.typicode.com/Yura33-dev/yura33-dev';
@@ -17,8 +17,9 @@ async function getProducts() {
     if (products.status > 299) {
       throw new Error('Error with getting products');
     } else {
-      renderTemplate(products);
-      window.localStorage.setItem('products', JSON.stringify(products));
+      // renderTemplate(products);
+      // window.localStorage.setItem('products', JSON.stringify(products));
+      return products;
     }
   } catch (error) {
     console.log(error);
@@ -27,7 +28,6 @@ async function getProducts() {
 
 export function renderTemplate(products) {
   const productsCatalog = document.querySelector('.products-catalog');
-  // !!!!!!
   productsCatalog.innerHTML = '';
 
   products.map(product => {
