@@ -1,15 +1,17 @@
 /* Mobile filter & sorting */
-aside.mobile-aside {
+aside.aside {
   padding-top: 1rem;
 }
 
-aside.mobile-aside .aside-content {
+aside.aside .aside-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 1rem;
 }
 
-aside.mobile-aside .filter-btn {
+aside.aside .filter-btn {
   background-color: transparent;
   padding: 0.5rem;
 
@@ -23,27 +25,34 @@ aside.mobile-aside .filter-btn {
   font-size: 1rem;
 }
 
-aside.mobile-aside .filter-btn .icon {
+aside.aside .filter-btn .icon {
   fill: none;
   stroke: var(--primary-color);
   transition: stroke 100ms linear;
 }
 
-aside.mobile-aside .filter-content {
+aside.aside .filter-content {
+  background-color: #ffe0a5;
+
+  border-radius: 0.5rem;
   overflow: hidden;
   max-height: 0;
 
   transition: max-height 150ms linear;
 }
 
-aside.mobile-aside .filter-option {
+aside.aside .filter-options {
+  padding: 0 15px 0 15px;
+}
+
+aside.aside .filter-option {
   padding: 0.7rem 0 0.7rem 0;
 }
 
-aside.mobile-aside .filter-reset {
+aside.aside .filter-reset {
   display: block;
   padding: 0;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 25px auto;
   width: 150px;
   height: 50px;
   border-radius: 0.35rem;
@@ -51,28 +60,28 @@ aside.mobile-aside .filter-reset {
   transition: background-color 100ms linear;
 }
 
-aside.mobile-aside .filter-content-open + .filter-reset {
+aside.aside .filter-content-open + .filter-reset {
   display: block;
 }
 
-aside.mobile-aside .filter-name {
+aside.aside .filter-name {
   font-weight: 700;
   font-size: 0.9rem;
   margin-bottom: 0.85rem;
 }
 
-aside.mobile-aside .filter-values {
+aside.aside .filter-values {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-aside.mobile-aside .filter-value label {
+aside.aside .filter-value label {
   display: flex;
   gap: 5px;
 }
 
-aside.mobile-aside .price-input-filter {
+aside.aside .price-input-filter {
   padding: 0.5rem;
   border: 1px solid var(--neutral-60);
   border-radius: 5px;
@@ -80,7 +89,7 @@ aside.mobile-aside .price-input-filter {
   width: 40%;
 }
 
-aside.mobile-aside .price-input-filter::placeholder {
+aside.aside .price-input-filter::placeholder {
   font-size: 0.75rem;
 }
 
@@ -111,12 +120,12 @@ aside.mobile-aside .price-input-filter::placeholder {
 
 /* sort */
 
-aside.mobile-aside .sort-label {
+aside.aside .sort-label {
   font-size: 0.85rem;
   margin-right: 0.4rem;
 }
 
-aside.mobile-aside .select-sort {
+aside.aside .select-sort {
   min-height: 30px;
   padding: 0.5rem;
 
@@ -128,38 +137,39 @@ aside.mobile-aside .select-sort {
 }
 
 @media (min-width: 991px) {
-  aside.mobile-aside .filter-btn:hover {
+  aside.aside .filter-btn:hover {
     cursor: pointer;
   }
 
-  aside.mobile-aside .filter-btn:hover .icon {
+  aside.aside .filter-btn:hover .icon {
     stroke: var(--orange-shine);
   }
-  aside.mobile-aside .filter-btn {
+  aside.aside .filter-btn {
     font-size: 1.45rem;
   }
 
-  aside.mobile-aside .filter-options {
+  aside.aside .filter-options {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 25px;
   }
 
-  aside.mobile-aside .filter-option {
+  aside.aside .filter-option {
     padding: 1rem;
     width: 200px;
-    background-color: #f3f3f3;
+    background-color: #f6f5f5;
     border-radius: 0.5rem;
   }
 
-  aside.mobile-aside .filter-reset:hover {
+  aside.aside .filter-reset:hover {
     cursor: pointer;
     background-color: var(--primary-color-80);
   }
 
-  aside.mobile-aside .price-input-filter {
+  aside.aside .price-input-filter {
     width: 100%;
   }
 }

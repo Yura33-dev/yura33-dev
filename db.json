@@ -7,12 +7,19 @@
       "price": 10.0,
       "category": "Food",
       "options": {
-        "type": "Dog Food",
+        "type": "Cat Food",
         "weight": 385
       },
       "rating": 4,
       "slug": "reflex-plus-adult-cat-food-salmon-small",
-      "image": "./assets/images/products/product-1@1.jpg"
+      "image": "./assets/images/products/product-1@1.jpg",
+      "details": {
+        "category": ["Category:", "cat food"],
+        "for": ["For:", "kitties, adult cats"],
+        "weight": ["Weight:", "385 g"],
+        "packType": ["Pack type:", "can"],
+        "type": ["Type", "Classic"]
+      }
     },
     {
       "id": "2",
@@ -26,7 +33,14 @@
       },
       "rating": 5,
       "slug": "reflex-plus-adult-cat-food-salmon-big",
-      "image": "./assets/images/products/product-2@1.jpg"
+      "image": "./assets/images/products/product-2@1.jpg",
+      "details": {
+        "category": ["Category:", "cat food"],
+        "for": ["For:", "adult cats"],
+        "weight": ["Weight:", "1500 g"],
+        "packType": ["Pack type:", "pack"],
+        "type": ["Type", "Premium"]
+      }
     },
     {
       "id": "3",
@@ -40,7 +54,13 @@
       },
       "rating": 5,
       "slug": "cat-scratching-ball-toy-kitten-sisal-rope-ball",
-      "image": "./assets/images/products/product-3@1.jpg"
+      "image": "./assets/images/products/product-3@1.jpg",
+      "details": {
+        "category": ["Category:", "cat toy"],
+        "for": ["For:", "kitties, adult cats"],
+        "weight": ["Weight:", "1000 g"],
+        "material": ["Material", "Wood + textile"]
+      }
     },
     {
       "id": "4",
@@ -54,7 +74,13 @@
       },
       "rating": 4,
       "slug": "cute-pet-cat-warm-nest",
-      "image": "./assets/images/products/product-4@1.jpg"
+      "image": "./assets/images/products/product-4@1.jpg",
+      "details": {
+        "category": ["Category:", "cat toy"],
+        "for": ["For:", "kitties, adult cats"],
+        "weight": ["Weight:", "2000 g"],
+        "material": ["Material", "Textile"]
+      }
     },
     {
       "id": "5",
@@ -68,7 +94,14 @@
       },
       "rating": 5,
       "slug": "naturvet-dogs-omega-gold-plus-salmon-oil",
-      "image": "./assets/images/products/product-5@1.jpg"
+      "image": "./assets/images/products/product-5@1.jpg",
+      "details": {
+        "category": ["Category:", "dog food"],
+        "for": ["For:", "puppies, adult dogs"],
+        "weight": ["Weight:", "1000 g"],
+        "packType": ["Pack type:", "pack"],
+        "type": ["Type", "Premium"]
+      }
     },
     {
       "id": "6",
@@ -82,7 +115,13 @@
       },
       "rating": 4,
       "slug": "costumes-fashion-pet-clother-cowboy-rider",
-      "image": "./assets/images/products/product-6@1.jpg"
+      "image": "./assets/images/products/product-6@1.jpg",
+      "details": {
+        "category": ["Category:", "dog clothes"],
+        "for": ["For:", "mini dogs, small dogs"],
+        "weight": ["Weight:", "200 g"],
+        "material": ["Material", "Textile"]
+      }
     },
     {
       "id": "7",
@@ -96,7 +135,13 @@
       },
       "rating": 2,
       "slug": "costumes-fashion-pet-clother-chicken-drumstick",
-      "image": "./assets/images/products/product-7@1.jpg"
+      "image": "./assets/images/products/product-7@1.jpg",
+      "details": {
+        "category": ["Category:", "cat clothes"],
+        "for": ["For:", "adult cats"],
+        "weight": ["Weight:", "100 g"],
+        "material": ["Material", "Textile"]
+      }
     },
     {
       "id": "8",
@@ -110,7 +155,13 @@
       },
       "rating": 2,
       "slug": "plush-pet-toy",
-      "image": "./assets/images/products/product-8@1.jpg"
+      "image": "./assets/images/products/product-8@1.jpg",
+      "details": {
+        "category": ["Category:", "dog toy"],
+        "for": ["For:", "puppies, adult dogs"],
+        "weight": ["Weight:", "350 g"],
+        "material": ["Material", "Textile"]
+      }
     }
   ]
 }

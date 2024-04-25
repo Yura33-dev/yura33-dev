@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monito | Products page</title>
+    <title>Monito | Products</title>
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
+      href="./../assets/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
+      href="./../assets/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
+      href="./../assets/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="manifest" href="./../assets/favicon/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,87 +30,122 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/pages/catalogPage.css" />
+    <link rel="stylesheet" href="./../assets/css/pages/productPage.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <a href="./index.html" class="header-logotype">
+        <a href="./../index.html" class="header-logotype">
           <svg width="115" height="40" class="icon">
-            <use href="./assets/images/icons.svg#logo-icon"></use>
+            <use href="./../assets/images/icons.svg#logo-icon"></use>
           </svg>
         </a>
 
         <nav class="header-nav">
           <ul class="header-menu-list">
             <li class="header-menu-item">
-              <a href="./index.html" class="header-menu-link">Home</a>
+              <a href="./../index.html" class="header-menu-link">Home</a>
             </li>
             <li class="header-menu-item">
-              <a href="./catalog.html" class="header-menu-link">Products</a>
+              <a href="./../catalog.html" class="header-menu-link">Products</a>
             </li>
             <li class="header-menu-item">
-              <a href="./adopt.html" class="header-menu-link">Adoption</a>
+              <a href="./../adopt.html" class="header-menu-link">Adoption</a>
             </li>
             <li class="header-menu-item">
-              <a href="./catalog.html" class="header-menu-link">Contact</a>
+              <a href="./../catalog.html" class="header-menu-link">Contact</a>
             </li>
           </ul>
 
           <button class="cart-btn">
             <svg class="icon" width="23" height="23">
-              <use href="./assets/images/icons.svg#cart-icon"></use>
+              <use href="./../assets/images/icons.svg#cart-icon"></use>
             </svg>
           </button>
         </nav>
 
         <button class="burger-btn">
           <svg width="30" height="25" class="icon">
-            <use href="./assets/images/icons.svg#burger-icon"></use>
+            <use href="./../assets/images/icons.svg#burger-icon"></use>
           </svg>
         </button>
       </div>
     </header>
 
-    <aside class="aside">
-      <div class="container">
-        <div class="aside-content">
-          <div class="filter">
-            <button type="button" class="filter-btn">
-              <svg class="icon" width="25px" height="25px">
-                <use href="./assets/images/icons.svg#filter-icon"></use>
-              </svg>
-              Filter
-            </button>
-          </div>
-
-          <div class="sort">
-            <select name="sorting" id="sorting" class="select-sort">
-              <option value="popular">Sort by: Popular</option>
-              <option value="price-desc">Sort by: Price (desc)</option>
-              <option value="price-asc">Sort by: Price (asc)</option>
-              <option value="name-desc">Sort by: Name (desc)</option>
-              <option value="name-asc">Sort by: Name (asc)</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-content">
-          <div class="filter-options"></div>
-          <button type="button" class="filter-reset">Reset Filter</button>
-        </div>
-      </div>
-    </aside>
-
     <main>
-      <section class="products">
+      <section class="product-section">
         <div class="container">
-          <div class="section-header">
-            <div class="wrapper">
-              <h2 class="section-title">Our products</h2>
+          <div class="product-page">
+            <div class="product-wrapper">
+              <div class="product-image">
+                <img
+                  src="./../assets/images/products/product-1@1.jpg"
+                  alt="product 1"
+                />
+              </div>
+
+              <div class="product-main-info">
+                <h1 class="product-title">Reflex Plus Adult Cat Food Salmon</h1>
+
+                <div class="product-counter">
+                  <button type="button" class="product-minus">
+                    <svg width="15" height="15">
+                      <use href="./../assets/images/icons.svg#minus-icon"></use>
+                    </svg>
+                  </button>
+
+                  <div class="product-counter-input">
+                    <input type="number" name="amount" value="1" />
+                  </div>
+
+                  <button type="button" class="product-plus">
+                    <svg width="15" height="15">
+                      <use href="./../assets/images/icons.svg#plus-icon"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="product-buy">
+                  <button type="button" class="product-in-cart-btn">
+                    Add to cart
+                  </button>
+                  <div class="product-cost">
+                    <span class="price-currency">$</span>
+                    10.00
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-information">
+              <h3 class="info-title">Information</h3>
+              <div class="info-details">
+                <div class="info-detail">
+                  <p class="detail-key">Category:</p>
+                  <p class="detail-value">Cat Food</p>
+                </div>
+
+                <div class="info-detail">
+                  <p class="detail-key">For:</p>
+                  <p class="detail-value">kitties, adult cats</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-description">
+              <h3 class="description-title">Description</h3>
+              <p class="description-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                harum dolorem similique quis deserunt in eveniet? Quod dolore
+                odio quaerat aperiam placeat nemo officia sequi, hic officiis
+                error dolorem est. Pariatur sit harum odio veritatis officia
+                nostrum magnam ratione iusto consequuntur, quas impedit
+                delectus, beatae, ullam aperiam hic possimus vitae. Voluptas
+                placeat necessitatibus vero, dolorem possimus soluta vel
+                architecto minima.
+              </p>
             </div>
           </div>
-
-          <ul class="products-catalog"></ul>
         </div>
       </section>
     </main>
@@ -134,16 +169,16 @@
         <nav class="footer-nav">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html"> Home </a>
+              <a class="nav-link" href="./../index.html"> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./catalog.html"> Products </a>
+              <a class="nav-link" href="./../catalog.html"> Products </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./adopt.html"> Adoption </a>
+              <a class="nav-link" href="./../adopt.html"> Adoption </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact.html"> Contact </a>
+              <a class="nav-link" href="./../contact.html"> Contact </a>
             </li>
           </ul>
         </nav>
@@ -152,25 +187,33 @@
           <li class="social-item">
             <a class="social-link" href="#!"
               ><svg class="icon" width="20" height="20">
-                <use href="./assets/images/icons.svg#facebook-icon"></use></svg
+                <use
+                  href="./../assets/images/icons.svg#facebook-icon"
+                ></use></svg
             ></a>
           </li>
           <li class="social-item">
             <a class="social-link" href="#!"
               ><svg class="icon" width="20" height="20">
-                <use href="./assets/images/icons.svg#twitter-icon"></use></svg
+                <use
+                  href="./../assets/images/icons.svg#twitter-icon"
+                ></use></svg
             ></a>
           </li>
           <li class="social-item">
             <a class="social-link" href="#!">
               <svg class="icon" width="20" height="20">
-                <use href="./assets/images/icons.svg#instagram-icon"></use></svg
+                <use
+                  href="./../assets/images/icons.svg#instagram-icon"
+                ></use></svg
             ></a>
           </li>
           <li class="social-item">
             <a class="social-link" href="#!"
               ><svg class="icon" width="20" height="20">
-                <use href="./assets/images/icons.svg#youtube-icon"></use></svg
+                <use
+                  href="./../assets/images/icons.svg#youtube-icon"
+                ></use></svg
             ></a>
           </li>
         </ul>
@@ -179,9 +222,9 @@
       <hr class="hr" />
 
       <div class="footer-logo-wrapper">
-        <a href="./index.html" class="footer-logotype">
+        <a href="./../index.html" class="footer-logotype">
           <svg width="115" height="40" class="icon">
-            <use href="./assets/images/icons.svg#logo-icon"></use>
+            <use href="./../assets/images/icons.svg#logo-icon"></use>
           </svg>
         </a>
 
@@ -198,23 +241,23 @@
       <div class="mobile-menu">
         <button type="button" class="mobile-menu-close">
           <svg class="icon close-icon" width="15" height="15">
-            <use href="./assets/images/icons.svg#close-icon"></use>
+            <use href="./../assets/images/icons.svg#close-icon"></use>
           </svg>
         </button>
 
         <nav class="mobile-nav">
           <ul class="menu-list">
             <li class="menu-item">
-              <a href="./index.html" class="menu-link">Home</a>
+              <a href="./../index.html" class="menu-link">Home</a>
             </li>
             <li class="menu-item">
-              <a href="./catalog.html" class="menu-link">Products</a>
+              <a href="./../catalog.html" class="menu-link">Products</a>
             </li>
             <li class="menu-item">
-              <a href="./adopt.html" class="menu-link">Adoption</a>
+              <a href="./../adopt.html" class="menu-link">Adoption</a>
             </li>
             <li class="menu-item">
-              <a href="./contact.html" class="menu-link">Contact</a>
+              <a href="./../contact.html" class="menu-link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -222,12 +265,12 @@
         <button type="button" class="cart-mobile-btn">
           Cart
           <svg class="icon" width="30" height="30">
-            <use href="./assets/images/icons.svg#cart-icon"></use>
+            <use href="./../assets/images/icons.svg#cart-icon"></use>
           </svg>
         </button>
 
         <div class="mobile-image">
-          <img src="./assets/images/dog-cart.gif" alt="Dog" />
+          <img src="./../assets/images/dog-cart.gif" alt="Dog" />
         </div>
       </div>
     </div>
@@ -238,7 +281,7 @@
           <p class="cart-title">Cart</p>
           <button type="button" class="cart-close">
             <svg class="icon close-icon" width="15" height="15">
-              <use href="./assets/images/icons.svg#close-icon"></use>
+              <use href="./../assets/images/icons.svg#close-icon"></use>
             </svg>
           </button>
         </div>
@@ -249,7 +292,7 @@
               <div class="product-cart-link">
                 <a href="#!" class="product-image-link">
                   <img
-                    src="./assets/images/adoption/puppy-12.jpg"
+                    src="./../assets/images/adoption/puppy-12.jpg"
                     alt="test"
                     class="product-cart-image"
                   />
@@ -264,7 +307,7 @@
 
               <button type="button" class="product-delete">
                 <svg width="20" height="20" class="icon">
-                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                  <use href="./../assets/images/icons.svg#trash-icon"></use>
                 </svg>
               </button>
             </div>
@@ -273,7 +316,7 @@
               <div class="product-counter">
                 <button type="button" class="product-minus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                    <use href="./../assets/images/icons.svg#minus-icon"></use>
                   </svg>
                 </button>
 
@@ -283,7 +326,7 @@
 
                 <button type="button" class="product-plus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                    <use href="./../assets/images/icons.svg#plus-icon"></use>
                   </svg>
                 </button>
               </div>
@@ -299,7 +342,7 @@
               <div class="product-cart-link">
                 <a href="#!" class="product-image-link">
                   <img
-                    src="./assets/images/adoption/puppy-11.jpg"
+                    src="./../assets/images/adoption/puppy-11.jpg"
                     alt="test"
                     class="product-cart-image"
                   />
@@ -313,7 +356,7 @@
               </div>
               <button type="button" class="product-delete">
                 <svg width="20" height="20" class="icon">
-                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                  <use href="./../assets/images/icons.svg#trash-icon"></use>
                 </svg>
               </button>
             </div>
@@ -322,7 +365,7 @@
               <div class="product-counter">
                 <button type="button" class="product-minus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                    <use href="./../assets/images/icons.svg#minus-icon"></use>
                   </svg>
                 </button>
 
@@ -338,7 +381,7 @@
 
                 <button type="button" class="product-plus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                    <use href="./../assets/images/icons.svg#plus-icon"></use>
                   </svg>
                 </button>
               </div>
@@ -354,7 +397,7 @@
               <div class="product-cart-link">
                 <a href="#!" class="product-image-link">
                   <img
-                    src="./assets/images/adoption/puppy-10.jpg"
+                    src="./../assets/images/adoption/puppy-10.jpg"
                     alt="test"
                     class="product-cart-image"
                   />
@@ -367,7 +410,7 @@
 
               <button type="button" class="product-delete">
                 <svg width="20" height="20" class="icon">
-                  <use href="./assets/images/icons.svg#trash-icon"></use>
+                  <use href="./../assets/images/icons.svg#trash-icon"></use>
                 </svg>
               </button>
             </div>
@@ -376,7 +419,7 @@
               <div class="product-counter">
                 <button type="button" class="product-minus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#minus-icon"></use>
+                    <use href="./../assets/images/icons.svg#minus-icon"></use>
                   </svg>
                 </button>
 
@@ -392,7 +435,7 @@
 
                 <button type="button" class="product-plus">
                   <svg width="15" height="15">
-                    <use href="./assets/images/icons.svg#plus-icon"></use>
+                    <use href="./../assets/images/icons.svg#plus-icon"></use>
                   </svg>
                 </button>
               </div>
@@ -410,29 +453,32 @@
             ><span class="price-currency">$</span>108.31
           </p>
           <a
-            href="./checkout.html"
+            href="./../checkout.html"
             class="cart-checkout btn-link btn-link-bg-transparent mobile"
           >
             Let's Checkout
             <svg class="icon" width="24px" height="24px">
-              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+              <use href="./../assets/images/icons.svg#chevron-right-icon"></use>
             </svg>
           </a>
 
           <a
-            href="./checkout.html"
+            href="./../checkout.html"
             class="cart-checkout btn-link btn-link-bg-transparent desktop"
           >
             Let's Checkout
             <svg class="icon" width="24px" height="24px">
-              <use href="./assets/images/icons.svg#chevron-right-icon"></use>
+              <use href="./../assets/images/icons.svg#chevron-right-icon"></use>
             </svg>
           </a>
         </div>
       </div>
     </div>
-
-    <script defer type="module" src="./assets/js/common.js"></script>
-    <script defer type="module" src="./assets/js/pages/catalogPage.js"></script>
+    <script defer type="module" src="./../assets/js/common.js"></script>
+    <script
+      defer
+      type="module"
+      src="./../assets/js/pages/productPage.js"
+    ></script>
   </body>
 </html>

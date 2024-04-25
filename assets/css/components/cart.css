@@ -166,6 +166,8 @@
   background-color: var(--primary-color-60);
   border: none;
   border-radius: 5px;
+
+  transition: background-color 100ms linear;
 }
 
 .product-minus:disabled {
@@ -261,11 +263,15 @@
     outline-color: var(--orange-shine);
   }
 
-  .product-counter button:hover,
   .product-counter button:focus {
     cursor: pointer;
     outline-width: 2px;
     outline-color: var(--orange-shine);
+  }
+
+  .product-counter button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
   }
 
   .product:hover,

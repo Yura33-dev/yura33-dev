@@ -48,9 +48,9 @@ function initFilter(filterContent, filterOpenBtn, filterResetBtn, products) {
   enableFilterButtons(filterOpenBtn, filterContent, filterResetBtn, products);
   enableFilterInputs(products);
 
-  getStorageCategories();
+  getStorageFilter();
 
-  renderTemplate(products);
+  filteredPrice(products);
 }
 
 function generateFilterCategories(productCategories) {
@@ -168,7 +168,15 @@ function enableFilterInputs(products) {
       e.target.name === 'minPrice'
         ? (filterObj.minPrice = +e.target.value)
         : (filterObj.maxPrice = +e.target.value);
-      filteredPrice(filterObj.filteredProducts);
+
+      setStorageFilter(null, null, {
+        minPrice: filterObj.minPrice,
+        maxPrice: filterObj.maxPrice,
+      });
+
+      filterObj.filteredProducts.length > 0
+        ? filteredPrice(filterObj.filteredProducts)
+        : filteredPrice(products);
     })
   );
 }
@@ -184,7 +192,7 @@ function filterToggle(filterContent) {
 function filterClose(filterContent) {
   filterContent.style = '';
   filterContent.classList.remove('filter-content-open');
-  setStorageFilter(false, filterObj.categories);
+  setStorageFilter(false, filterObj.categories, null);
 }
 
 function filterOpen(filterContent) {
@@ -196,8 +204,8 @@ function filterOpen(filterContent) {
   options.forEach(option => (totalHeight += option.offsetHeight));
   totalHeight += filterResetBtn.offsetHeight;
 
-  filterContent.style.maxHeight = totalHeight + 20 + 'px';
-  setStorageFilter(true, filterObj.categories);
+  filterContent.style.maxHeight = totalHeight + 20 + 25 + 'px';
+  setStorageFilter(true, filterObj.categories, null);
 }
 
 function filteredCategory(e, products) {
@@ -247,7 +255,7 @@ function filteredPrice(filteredProducts) {
   }
 
   renderTemplate(priceFilteredProducts);
-  setStorageFilter(null, filterObj.categories);
+  setStorageFilter(null, filterObj.categories, null);
 }
 
 function resetFilter(products, categoriesInputs, priceInputs) {
@@ -268,44 +276,69 @@ function resetFilter(products, categoriesInputs, priceInputs) {
   const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
   if (storageFilter) {
     storageFilter.categories = filterObj.categories;
+    storageFilter.minPrice = filterObj.defaultMinPrice;
+    storageFilter.maxPrice = filterObj.defaultMaxPrice;
     window.localStorage.setItem('filter', JSON.stringify(storageFilter));
   }
 }
 
-function getStorageCategories() {
+function getStorageFilter() {
   const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
 
   if (!storageFilter) {
     window.localStorage.setItem(
       'filter',
-      JSON.stringify({ state: false, categories: [] })
+      JSON.stringify({
+        state: false,
+        categories: [],
+        minPrice: filterObj.minPrice,
+        maxPrice: filterObj.maxPrice,
+      })
     );
     return null;
   }
 
-  if (!storageFilter.categories) return null;
-
-  for (let category of storageFilter.categories) {
-    const input = document.getElementById(`filter-${category}`);
-    setTimeout(() => input.click(), 200);
+  if (storageFilter.categories.length > 0) {
+    for (let category of storageFilter.categories) {
+      const input = document.getElementById(`filter-${category}`);
+      setTimeout(() => input.click(), 200);
+    }
   }
 
   if (storageFilter.state) {
     const filterOpenBtn = document.querySelector('button.filter-btn');
     setTimeout(() => filterOpenBtn.click(), 200);
   }
+
+  if (storageFilter.minPrice) {
+    const inputMinPrice = document.getElementById('minPrice');
+    inputMinPrice.value = storageFilter.minPrice;
+    filterObj.minPrice = storageFilter.minPrice;
+  }
+
+  if (storageFilter.maxPrice) {
+    const inputMaxPrice = document.getElementById('maxPrice');
+    inputMaxPrice.value = storageFilter.maxPrice;
+    filterObj.maxPrice = storageFilter.maxPrice;
+  }
 }
 
-function setStorageFilter(state, categories) {
+function setStorageFilter(state, categories, prices) {
   const storageFilter = JSON.parse(window.localStorage.getItem('filter'));
+
   if (storageFilter) {
-    state !== null ? (storageFilter.state = state) : null;
-    categories ? (storageFilter.categories = categories) : null;
+    if (state !== null) {
+      storageFilter.state = state;
+    }
+
+    if (categories !== null) {
+      storageFilter.categories = categories;
+    }
+
+    if (prices !== null) {
+      storageFilter.minPrice = prices.minPrice;
+      storageFilter.maxPrice = prices.maxPrice;
+    }
     window.localStorage.setItem('filter', JSON.stringify(storageFilter));
-  } else {
-    window.localStorage.setItem(
-      'filter',
-      JSON.stringify({ state, categories: [] })
-    );
   }
 }

@@ -1,30 +1,11 @@
 'use strict';
+import { getProducts } from '../api/api.js';
 import filter from './../components/filter.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   const products = await getProducts();
   filter(products);
 });
-
-const api = 'https://my-json-server.typicode.com/Yura33-dev/yura33-dev';
-let products = [];
-
-async function getProducts() {
-  try {
-    const response = await fetch(`${api}/products`);
-    products = await response.json();
-
-    if (products.status > 299) {
-      throw new Error('Error with getting products');
-    } else {
-      // renderTemplate(products);
-      // window.localStorage.setItem('products', JSON.stringify(products));
-      return products;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 export function renderTemplate(products) {
   const productsCatalog = document.querySelector('.products-catalog');
@@ -69,9 +50,7 @@ function getProductOptions(options) {
 
 function renderProductCard(product, options) {
   return `
-    <a href="./products/${
-      product.slug
-    }.html" class="product-link" tabindex="-1">
+    <a href="./catalog/${product.slug}.html" class="product-link" tabindex="-1">
         <div class="product-image-wrapper">
         <img
             src="${product.image}"
