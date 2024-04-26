@@ -4,14 +4,22 @@ import filter from './../components/filter.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   const products = await getProducts();
-  filter(products);
+
+  if (window.location.pathname.includes('catalog')) {
+    filter(products);
+  }
 });
 
-export function renderTemplate(products) {
+export function renderTemplate(products, limit = null) {
   const productsCatalog = document.querySelector('.products-catalog');
   productsCatalog.innerHTML = '';
 
-  products.map(product => {
+  let limitedProducts;
+  limit
+    ? (limitedProducts = products.splice(0, limit))
+    : (limitedProducts = products);
+
+  limitedProducts.map(product => {
     const li = document.createElement('li');
     li.classList.add('product-card');
     li.setAttribute('tabindex', 0);
@@ -49,14 +57,20 @@ function getProductOptions(options) {
 }
 
 function renderProductCard(product, options) {
+  let dynamicPath = '';
+
+  window.location.host === 'yura33-dev.github.io'
+    ? (dynamicPath = '/yura33-dev/')
+    : (dynamicPath = '/');
+
   return `
     <a href="./catalog/${product.slug}.html" class="product-link" tabindex="-1">
         <div class="product-image-wrapper">
-        <img
-            src="${product.image}"
-            alt="${product.title}"
-            class="product-image"
-        />
+          <img
+              src="${product.image}"
+              alt="${product.title}"
+              class="product-image"
+          />
         </div>
         <h3 class="product-title">${product.title}</h3>
 
@@ -68,5 +82,12 @@ function renderProductCard(product, options) {
         <span class="price-currency">$</span>
         ${product.price.toFixed(2)}
         </div>
+
+        <button type="button" class="card-btn" tabindex="-1">
+          More
+          <svg class="icon" width="20" height="20">
+            <use href="${dynamicPath}assets/images/icons.svg#paw-icon"></use>
+          </svg>
+        </button>
     </a>`;
 }

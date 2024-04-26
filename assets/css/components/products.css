@@ -78,6 +78,26 @@ section.products .product-price {
   transition: color 100ms linear;
 }
 
+section.products .card-btn {
+  border-radius: 1.5rem;
+  text-transform: capitalize;
+  transition: background-color 100ms linear;
+  margin-top: 1rem;
+}
+
+section.products .card-btn .icon {
+  fill: var(--secondary-color-80);
+
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+
+  transform: translateY(-50%);
+
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
 @media (min-width: 768px) {
   section.products .products-catalog {
     flex-direction: row;
@@ -115,5 +135,20 @@ section.products .product-price {
   section.products .product-card:hover .product-price,
   section.products .product-card:focus .product-price {
     color: var(--orange-shine);
+  }
+
+  section.products .card-btn {
+    position: relative;
+  }
+
+  section.products .product-link:hover .card-btn,
+  section.products .card:focus .card-btn {
+    background-color: var(--primary-color-80);
+    cursor: pointer;
+  }
+
+  section.products .product-link:hover .card-btn .icon,
+  section.products .card:focus .card-btn .icon {
+    opacity: 1;
   }
 }
