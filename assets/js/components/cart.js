@@ -1,10 +1,6 @@
 'use strict';
 
 export default function cart() {
-  cartInit();
-}
-
-function cartInit() {
   cartToggleInit();
 
   const cart = document.querySelector('.cart');
@@ -19,6 +15,19 @@ function cartInit() {
 
   cart.addEventListener('click', clickHandler);
   cart.addEventListener('change', changeHandler);
+}
+
+function cartToggleInit() {
+  const cartBtnsOpen = document.querySelectorAll('.cart-btn');
+
+  const cartOverlay = document.querySelector('.cart-overlay');
+  const mobileMenuOverlay = document.querySelector('.mobile-overlay');
+
+  cartBtnsOpen.forEach(cartBtn => {
+    cartBtn.addEventListener('click', () =>
+      cartOpen(cartOverlay, mobileMenuOverlay)
+    );
+  });
 }
 
 export function addToCart(product) {
@@ -43,19 +52,6 @@ export function addToCart(product) {
 
   updateCartMarkup(getStorageCart);
   showMessage(product.title);
-}
-
-function cartToggleInit() {
-  const cartBtnsOpen = document.querySelectorAll('.cart-btn');
-
-  const cartOverlay = document.querySelector('.cart-overlay');
-  const mobileMenuOverlay = document.querySelector('.mobile-overlay');
-
-  cartBtnsOpen.forEach(cartBtn => {
-    cartBtn.addEventListener('click', () =>
-      cartOpen(cartOverlay, mobileMenuOverlay)
-    );
-  });
 }
 
 function cartOpen(cartOverlay, mobileMenuOverlay) {
@@ -117,15 +113,11 @@ function generateCartHeader() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  const inProductPage = window.location.pathname.includes('/catalog/') || null;
-
   const cartHeader = `
     <p class="cart-title">Cart</p>
     <button type="button" class="cart-close">
       <svg class="icon close-icon" width="15" height="15">
-        <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#close-icon"></use>
+        <use href="${dynamicPath}assets/images/icons.svg#close-icon"></use>
         </svg>
       </button>
   `;
@@ -214,8 +206,6 @@ function generateCartFooter(totalAmount) {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  const inProductPage = window.location.pathname.includes('/catalog/') || null;
-
   let cartFooter = `
       <p class="cart-total">
         <span class="cart-price-total">Cart:</span>
@@ -225,28 +215,20 @@ function generateCartFooter(totalAmount) {
 
   if (totalAmount > 0.1) {
     cartFooter += `
-          <a href="${dynamicPath}${
-      inProductPage ? '..' : ''
-    }/checkout.html" class="cart-checkout btn-link btn-link-bg-transparent mobile">
-                Let's Checkout
-                <svg class="icon" width="24px" height="24px">
-                  <use href="${dynamicPath}${
-      inProductPage ? '..' : ''
-    }/assets/images/icons.svg#chevron-right-icon"></use>
-                </svg>
-              </a>
-        
-              <a href="${dynamicPath}${
-      inProductPage ? '..' : ''
-    }/checkout.html" class="cart-checkout btn-link btn-link-bg-transparent desktop">
-                Let's Checkout
-                <svg class="icon" width="24px" height="24px">
-                  <use href="${dynamicPath}${
-      inProductPage ? '..' : ''
-    }/assets/images/icons.svg#chevron-right-icon"></use>
-                </svg>
-              </a>
-      `;
+      <a href="${dynamicPath}checkout.html" class="cart-checkout btn-link btn-link-bg-transparent mobile">
+        Let's Checkout
+        <svg class="icon" width="24px" height="24px">
+          <use href="${dynamicPath}assets/images/icons.svg#chevron-right-icon"></use>
+        </svg>
+      </a>
+    
+      <a href="${dynamicPath}checkout.html" class="cart-checkout btn-link btn-link-bg-transparent desktop">
+        Let's Checkout
+        <svg class="icon" width="24px" height="24px">
+          <use href="${dynamicPath}assets/images/icons.svg#chevron-right-icon"></use>
+        </svg>
+      </a>
+    `;
   }
 
   return cartFooter;
@@ -278,14 +260,10 @@ function generateEmptyCartMarkup() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  const inProductPage = window.location.pathname.includes('/catalog/') || null;
-
   cartContent.innerHTML = `
     <p class="empty-cart">Your cart is empty</p>
     <div>
-    <img src="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/sad-dog-in-cart.gif" alt="animated crying dog"/>
+    <img src="${dynamicPath}assets/images/sad-dog-in-cart.gif" alt="animated crying dog"/>
     </div>
     
   `;
