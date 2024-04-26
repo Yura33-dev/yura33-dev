@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "title": "Reflex Plus Adult Cat Food Salmon",
+      "title": "Reflex Plus Adult Cat Food Salmon Small",
       "description": "product 1 description",
       "price": 10.0,
       "category": "Food",
@@ -23,7 +23,7 @@
     },
     {
       "id": "2",
-      "title": "Reflex Plus Adult Cat Food Salmon",
+      "title": "Reflex Plus Adult Cat Food Salmon Big",
       "description": "product 2 description",
       "price": 15.3,
       "category": "Food",

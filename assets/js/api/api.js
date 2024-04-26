@@ -15,7 +15,7 @@ export async function getProducts() {
   }
 }
 
-export async function getProduct(slug) {
+export async function getProductBySlag(slug) {
   const products = await getProducts();
   const product = products.filter(product => product.slug === slug);
   return product[0];

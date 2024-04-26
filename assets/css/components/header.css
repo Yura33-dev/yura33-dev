@@ -83,8 +83,7 @@
     position: relative;
   }
 
-  .header .cart-btn::after {
-    content: '0';
+  .header .cart-counter {
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -121,7 +120,11 @@
     }
   }
 
-  .header .cart-btn:hover::after {
+  .cartJumping {
+    animation: cartJump 600ms linear;
+  }
+
+  .header .cart-btn:hover .cart-counter {
     animation: cartJump 600ms linear;
   }
 
