@@ -14,44 +14,32 @@ function generateHeader() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  const inProductPage = window.location.pathname.includes('/catalog/') || null;
+  // const inProductPage = window.location.pathname.includes('/catalog/') || null;
 
   return `
     <div class="container">
-      <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }index.html" class="header-logotype">
+      <a href="${dynamicPath}index.html" class="header-logotype">
         <svg width="115" height="40" class="icon">
-          <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#logo-icon"></use>
+          <use href="${dynamicPath}assets/images/icons.svg#logo-icon"></use>
         </svg>
       </a>
 
       <nav class="header-nav">
         <ul class="header-menu-list">
             <li class="header-menu-item">
-            <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }index.html" class="header-menu-link">Home</a>
+            <a href="${dynamicPath}index.html" class="header-menu-link">Home</a>
             </li>
             <li class="header-menu-item">
-            <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }catalog.html" class="header-menu-link">Products</a>
+            <a href="${dynamicPath}catalog.html" class="header-menu-link">Products</a>
             </li>
             <li class="header-menu-item">
-            <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }contact.html" class="header-menu-link">Contact</a>
+            <a href="${dynamicPath}contact.html" class="header-menu-link">Contact</a>
             </li>
         </ul>
 
         <button class="cart-btn desktop">
             <svg class="icon" width="23" height="23">
-            <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#cart-icon"></use>
+            <use href="${dynamicPath}assets/images/icons.svg#cart-icon"></use>
             </svg>
             <span class="cart-counter">0</span>
         </button>
@@ -59,9 +47,7 @@ function generateHeader() {
 
       <button class="burger-btn">
         <svg width="30" height="25" class="icon">
-            <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#burger-icon"></use>
+            <use href="${dynamicPath}assets/images/icons.svg#burger-icon"></use>
         </svg>
       </button>
   </div>
