@@ -14,8 +14,6 @@ function generateHeader() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  // const inProductPage = window.location.pathname.includes('/catalog/') || null;
-
   return `
     <div class="container">
       <a href="${dynamicPath}index.html" class="header-logotype">

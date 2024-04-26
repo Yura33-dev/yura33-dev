@@ -16,33 +16,23 @@ function generateMobileMenu() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
-  const inProductPage = window.location.pathname.includes('/catalog/') || null;
-
   return `
     <button type="button" class="mobile-menu-close">
       <svg class="icon close-icon" width="15" height="15">
-        <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#close-icon"></use>
+        <use href="${dynamicPath}assets/images/icons.svg#close-icon"></use>
       </svg>
     </button>
 
     <nav class="mobile-nav">
       <ul class="menu-list">
         <li class="menu-item">
-          <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }index.html" class="menu-link">Home</a>
+          <a href="${dynamicPath}index.html" class="menu-link">Home</a>
         </li>
         <li class="menu-item">
-          <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }catalog.html" class="menu-link">Products</a>
+          <a href="${dynamicPath}catalog.html" class="menu-link">Products</a>
         </li>
         <li class="menu-item">
-          <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }contact.html" class="menu-link">Contact</a>
+          <a href="${dynamicPath}contact.html" class="menu-link">Contact</a>
         </li>
       </ul>
     </nav>
@@ -50,17 +40,13 @@ function generateMobileMenu() {
     <button type="button" class="cart-btn cart-mobile-btn">
       Cart
       <svg class="icon" width="30" height="30">
-        <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#cart-icon"></use>
+        <use href="${dynamicPath}assets/images/icons.svg#cart-icon"></use>
       </svg>
       <span class="cart-counter">0</span>
     </button>
 
     <div class="mobile-image">
-      <img src="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/dog-cart.gif" alt="Dog" />
+      <img src="${dynamicPath}assets/images/dog-cart.gif" alt="Dog" />
     </div>
   `;
 }

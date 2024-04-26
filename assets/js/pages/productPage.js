@@ -5,7 +5,10 @@ import { getProductBySlag } from './../api/api.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   const path = window.location.pathname;
-  const slug = path.replace(/\/catalog\//, '').replace(/.html/, '');
+  const slug = path
+    .replace(/\/catalog\//, '')
+    .replace(/.html/, '')
+    .replace(/\/yura33-dev/, '');
 
   const product = await getProductBySlag(slug);
   document.title = `Monito | ${product.title}`;

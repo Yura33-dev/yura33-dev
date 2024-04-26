@@ -33,19 +33,13 @@ function generateFooter() {
         <nav class="footer-nav">
             <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }index.html"> Home </a>
+                <a class="nav-link" href="${dynamicPath}index.html"> Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }catalog.html"> Products </a>
+                <a class="nav-link" href="${dynamicPath}catalog.html"> Products </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }contact.html"> Contact </a>
+                <a class="nav-link" href="${dynamicPath}contact.html"> Contact </a>
             </li>
             </ul>
         </nav>
@@ -54,33 +48,25 @@ function generateFooter() {
             <li class="social-item">
             <a class="social-link" href="#!"
                 ><svg class="icon" width="20" height="20">
-                <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#facebook-icon"></use></svg
+                <use href="${dynamicPath}assets/images/icons.svg#facebook-icon"></use></svg
             ></a>
             </li>
             <li class="social-item">
             <a class="social-link" href="#!"
                 ><svg class="icon" width="20" height="20">
-                <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#twitter-icon"></use></svg
+                <use href="${dynamicPath}assets/images/icons.svg#twitter-icon"></use></svg
             ></a>
             </li>
             <li class="social-item">
             <a class="social-link" href="#!">
                 <svg class="icon" width="20" height="20">
-                <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#instagram-icon"></use></svg
+                <use href="${dynamicPath}assets/images/icons.svg#instagram-icon"></use></svg
             ></a>
             </li>
             <li class="social-item">
             <a class="social-link" href="#!"
                 ><svg class="icon" width="20" height="20">
-                <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#youtube-icon"></use></svg
+                <use href="${dynamicPath}assets/images/icons.svg#youtube-icon"></use></svg
             ></a>
             </li>
         </ul>
@@ -89,13 +75,9 @@ function generateFooter() {
     <hr class="hr" />   
 
     <div class="footer-logo-wrapper">
-        <a href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }index.html" class="footer-logotype">
+        <a href="${dynamicPath}index.html" class="footer-logotype">
             <svg width="115" height="40" class="icon">
-            <use href="${dynamicPath}${
-    inProductPage ? '../' : ''
-  }assets/images/icons.svg#logo-icon"></use>
+            <use href="${dynamicPath}assets/images/icons.svg#logo-icon"></use>
             </svg>
         </a>
 
