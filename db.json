@@ -163,5 +163,6 @@
         "material": ["Material", "Textile"]
       }
     }
-  ]
+  ],
+  "subscribers": []
 }
