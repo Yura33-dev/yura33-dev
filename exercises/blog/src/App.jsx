@@ -1,9 +1,14 @@
 // src/App.tsx
 import './App.css';
-import Post from './components/Post';
+import Layout from './components/Layout';
+import BlogPage from './pages/Blog';
 
 function App() {
-  return <Post />;
+  return (
+    <Layout>
+      <BlogPage />
+    </Layout>
+  );
 }
 
 export default App;

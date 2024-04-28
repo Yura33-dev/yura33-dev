@@ -1,7 +1,16 @@
 /* eslint-disable react/prop-types */
 
+import Header from './Header';
+import Footer from './Footer';
+
 function Layout({ children }) {
-  return <article className="post">{children}</article>;
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
 }
 
 export default Layout;
