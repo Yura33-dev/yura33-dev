@@ -1,4 +1,9 @@
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import Layout from './Layout';
+import PostTitle from './PostTitle';
+import PostMain from './PostMain';
+
+export const PostContext = createContext({});
 
 function Post() {
   const [post, setPost] = useState([]);
@@ -30,20 +35,20 @@ function Post() {
   }
 
   return (
-    <article className="post">
-      <div className="cover-container">
-        <img src={post.cover} alt={post.title} />
-      </div>
-      <div className="post-footer">
-        <h3>
-          {post.title} {post.id}
-        </h3>
-        <p>{post.content}</p>
-        <button id="like" onClick={likeThis}>
-          Like this post <strong>{like}</strong>
-        </button>
-      </div>
-    </article>
+    <PostContext.Provider value={post}>
+      <Layout>
+        <div className="cover-container">
+          <img src={post.cover} alt={post.title} />
+        </div>
+        <div className="post-footer">
+          <PostTitle />
+          <PostMain />
+          <button id="like" onClick={likeThis}>
+            Like this post <strong>{like}</strong>
+          </button>
+        </div>
+      </Layout>
+    </PostContext.Provider>
   );
 }
 
