@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "title": "Reflex Plus Adult Cat Food Salmon Small",
+      "title": "Reflex Plus Adult Cat Food Salmon Small is a delicious and balanced meal designed for adult cats. Crafted from high-quality ingredients, including flavorful salmon, it provides your feline companion with all the essential nutrients for a healthy and active lifestyle.",
       "description": "product 1 description",
       "price": 10.0,
       "category": "Food",
@@ -24,7 +24,7 @@
     {
       "id": "2",
       "title": "Reflex Plus Adult Cat Food Salmon Big",
-      "description": "product 2 description",
+      "description": "Reflex Plus Adult Cat Food Salmon Big is a premium meal tailored for adult cats with hearty appetites. Made with top-quality ingredients, such as succulent salmon, it delivers essential nutrients to support your feline friend's overall health and vitality.",
       "price": 15.3,
       "category": "Food",
       "options": {
@@ -45,7 +45,7 @@
     {
       "id": "3",
       "title": "Cat scratching ball toy kitten sisal rope ball",
-      "description": "product 3 description",
+      "description": "The Cat Scratching Ball Toy with Sisal Rope is an interactive and stimulating toy designed to engage kittens and cats in playful behavior. Featuring a durable sisal rope surface, this ball toy provides the perfect texture for satisfying scratching instincts while promoting healthy nail maintenance. With its lightweight design and rolling motion, it encourages active play and exercise, keeping your feline friend entertained for hours on end.",
       "price": 32.1,
       "category": "Toy",
       "options": {
@@ -65,7 +65,7 @@
     {
       "id": "4",
       "title": "Cute Pet Cat Warm Nest",
-      "description": "product 4 description",
+      "description": "The Cute Pet Cat Warm Nest is a cozy and inviting sleeping spot for your beloved feline companion. Made with soft and plush materials, it offers warmth and comfort, ensuring a snug and peaceful rest for your pet. Its adorable design adds a touch of charm to any room while providing a secure and soothing environment for your cat to curl up and relax in.",
       "price": 24.4,
       "category": "Toy",
       "options": {
@@ -85,7 +85,7 @@
     {
       "id": "5",
       "title": "NaturVet Dogs Omega-Gold Plus Salmon Oil",
-      "description": "product 5 description",
+      "description": "NaturVet Dogs Omega-Gold Plus Salmon Oil is a premium dietary supplement specially formulated to support the overall health and wellness of dogs. Enriched with high-quality salmon oil, it provides essential omega-3 and omega-6 fatty acids, promoting healthy skin, coat, and immune function. This supplement is ideal for dogs of all ages and breeds, helping to maintain their vitality and vitality. With its delicious flavor, it's a tasty and beneficial addition to your dog's daily routine.",
       "price": 45.25,
       "category": "Food",
       "options": {
@@ -106,7 +106,7 @@
     {
       "id": "6",
       "title": "Costumes Fashion Pet Clother Cowboy Rider",
-      "description": "product 6 description",
+      "description": "The Costumes Fashion Pet Clothes Cowboy Rider is a playful and adorable outfit designed to add a touch of fun to your pet's wardrobe. Featuring a cowboy rider design, complete with a hat and attached 'rider', it's perfect for dressing up your furry friend for themed parties or special occasions. Made with comfortable and lightweight materials, it ensures your pet stays stylish and comfortable while making a fashion statement. Ideal for small to medium-sized pets, this costume will surely turn heads and bring smiles wherever you go!",
       "price": 15.65,
       "category": "Clothes",
       "options": {
@@ -126,7 +126,7 @@
     {
       "id": "7",
       "title": "Costumes Chicken Drumstick Headband",
-      "description": "product 7 description",
+      "description": "The Costumes Chicken Drumstick Headband for cats is a hilarious and charming accessory that adds a touch of humor to your feline friend's appearance. Shaped like a mouthwatering chicken drumstick, complete with realistic details and colors, it's sure to turn heads and spark laughter wherever your cat goes. Crafted from soft and lightweight materials, it's comfortable for cats to wear and won't cause any discomfort. Whether for a funny photo session or just to bring joy to your day, this headband is a delightful addition to your cat's wardrobe!",
       "price": 12.5,
       "category": "Clothes",
       "options": {
@@ -146,7 +146,7 @@
     {
       "id": "8",
       "title": "Plush Pet Toy",
-      "description": "product 8 description",
+      "description": "The Plush Pet Toy is a cuddly and delightful plaything designed to provide endless entertainment and comfort for your furry companion. Crafted from soft and durable materials, it offers a cozy texture that's perfect for snuggling and chewing. Its adorable design adds a touch of charm to playtime, while its sturdy construction ensures long-lasting fun. Whether your pet enjoys tossing, fetching, or simply lounging with their new favorite toy, this plush pet toy is sure to become a beloved addition to their collection.",
       "price": 8.35,
       "category": "Toy",
       "options": {
@@ -163,6 +163,5 @@
         "material": ["Material", "Textile"]
       }
     }
-  ],
-  "subscribers": []
+  ]
 }

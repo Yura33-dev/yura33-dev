@@ -1,0 +1,167 @@
+.checkout {
+  background-color: var(--neutral-10);
+}
+
+.checkout-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cart {
+  padding: 0;
+  right: auto;
+}
+
+.checkout-form {
+  padding: 1rem 0;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+}
+
+.fieldset:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.fieldset > label:not([for='policy']) {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.fieldset > input,
+.fieldset > select {
+  width: 75%;
+  border: none;
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.fieldset > select {
+  padding-right: 2rem;
+}
+
+.fieldset > input:focus,
+.fieldset > select:focus {
+  outline-width: 2px;
+  outline-color: var(--orange-shine);
+}
+
+.confirm-btn {
+  border-radius: 0.35rem;
+  transition: background-color 150ms linear;
+}
+
+.confirm-btn:disabled {
+  background-color: var(--neutral-40);
+}
+
+.confirm-btn:disabled:hover {
+  cursor: auto;
+  background-color: var(--neutral-40);
+}
+
+.order {
+  flex: 1 1 auto;
+  padding: 1rem 0;
+}
+
+.order-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-info .key {
+  flex: 1 1 30%;
+}
+
+.order-info .value {
+  flex: 1 1 70%;
+}
+
+.order-customer,
+.order-pay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.customer-name,
+.customer-phone,
+.customer-email,
+.pay-method,
+.delivery-method,
+.delivery-place {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.order-details {
+  display: block;
+  width: max-content;
+  background-color: var(--primary-color);
+  color: var(--neutral-00);
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 0.35rem;
+  transition: background-color 150ms linear;
+}
+
+@media (min-width: 768px) {
+  .checkout-wrapper {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .cart {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    flex: 1 1 60%;
+  }
+
+  .cart-content {
+    margin: 0;
+  }
+
+  .checkout-form {
+    flex: 1 1 40%;
+  }
+
+  .fieldset > input:not(.visually-hidden),
+  .fieldset > select {
+    width: 100%;
+  }
+
+  .order-title {
+    font-size: 1.6rem;
+  }
+  .order-details {
+    margin-top: 2.2rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .confirm-btn {
+    margin-top: 2rem;
+  }
+  .confirm-btn:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-80);
+  }
+
+  .order-details:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-80);
+  }
+}

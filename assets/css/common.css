@@ -174,6 +174,73 @@ p {
   clip-path: inset(100%);
 }
 
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 200ms linear, border 200ms linear;
+}
+
+.visually-hidden + label {
+  display: flex;
+  gap: 5px;
+}
+
+.custom-checkbox .icon {
+  fill: transparent;
+}
+
+.visually-hidden + label:hover {
+  cursor: pointer;
+}
+
+.visually-hidden:checked + label > .custom-checkbox {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.visually-hidden:checked + label > .custom-checkbox .icon {
+  fill: var(--neutral-00);
+}
+
+.load-icon {
+  fill: var(--neutral-00);
+}
+
+.loading {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--orange-shine);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: rotating 2.4s linear infinite;
+}
+
+.error-message {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: rgb(255, 78, 78);
+  padding-left: 1rem;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: 3rem;

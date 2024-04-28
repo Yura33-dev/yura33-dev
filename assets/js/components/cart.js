@@ -113,13 +113,17 @@ function generateCartHeader() {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
+  const checkoutPage = window.location.pathname.includes('/checkout');
+
+  const closeBtn = `<button type="button" class="cart-close">
+  <svg class="icon close-icon" width="15" height="15">
+    <use href="${dynamicPath}assets/images/icons.svg#close-icon"></use>
+    </svg>
+  </button>`;
+
   const cartHeader = `
-    <p class="cart-title">Cart</p>
-    <button type="button" class="cart-close">
-      <svg class="icon close-icon" width="15" height="15">
-        <use href="${dynamicPath}assets/images/icons.svg#close-icon"></use>
-        </svg>
-      </button>
+    <p class="cart-title">${checkoutPage ? 'Your cart' : 'Cart'}</p>
+    ${checkoutPage ? '' : closeBtn}
   `;
   return cartHeader;
 }
@@ -206,6 +210,8 @@ function generateCartFooter(totalAmount) {
     ? (dynamicPath = '/yura33-dev/')
     : (dynamicPath = '/');
 
+  const checkoutPage = window.location.pathname.includes('/checkout');
+
   let cartFooter = `
       <p class="cart-total">
         <span class="cart-price-total">Cart:</span>
@@ -213,7 +219,7 @@ function generateCartFooter(totalAmount) {
         ${totalAmount.toFixed(2)}
       </p>`;
 
-  if (totalAmount > 0.1) {
+  if (totalAmount > 0.1 && !checkoutPage) {
     cartFooter += `
       <a href="${dynamicPath}checkout.html" class="cart-checkout btn-link btn-link-bg-transparent mobile">
         Let's Checkout
@@ -246,6 +252,9 @@ function generateEmptyCartMarkup() {
   const cartHeader = cart.querySelector('.cart-header');
   const cartContent = cart.querySelector('.cart-content');
   const cartFooter = cart.querySelector('.cart-footer');
+
+  const confirmOrderBtn = document.querySelector('.confirm-btn');
+  if (confirmOrderBtn) confirmOrderBtn.setAttribute('disabled', 'true');
 
   if (cartFooter) {
     cartFooter.remove();

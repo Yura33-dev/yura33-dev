@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@import url('./../components/variables.css');
+@import url('./../common.css');
+@import url('./../components/mobileMenu.css');
+@import url('./../components/cart.css');
+@import url('./../components/header.css');
+@import url('./../components/footer.css');
+@import url('./../components/modal.css');
+
+.contacts {
+  padding: 25px 0 25px 0;
+}
+
+.fieldset:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.fieldset > label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.fieldset > input,
+.fieldset > textarea {
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.fieldset > input:focus,
+.fieldset > textarea:focus {
+  outline-width: 2px;
+  outline-color: var(--orange-shine);
+}
+
+.contact-submit {
+  border-radius: 0.35rem;
+  transition: background-color 150ms linear;
+}
+
+.contact-submit:disabled {
+  background-color: var(--neutral-40);
+}
+
+.contact-submit:disabled:hover {
+  cursor: auto;
+  background-color: var(--neutral-40);
+}
+
+.error-message {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: rgb(255, 78, 78);
+  padding-left: 1rem;
+}
+
+.contact-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    display: flex;
+  }
+  .contact-form {
+    flex: 1 1 60%;
+  }
+
+  .contact-image {
+    display: block;
+    flex: 1 1 40%;
+  }
+}
+@media (min-width: 991px) {
+  .contact-submit:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-80);
+  }
+}
