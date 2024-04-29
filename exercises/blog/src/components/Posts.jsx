@@ -21,13 +21,17 @@ function Posts() {
   }
 
   return (
-    <ul className="list-none">
-      {posts.map(post => (
-        <li key={post.id} className="mb-10 bg-slate-200 rounded-lg p-8">
-          <Post post={post} />
-        </li>
-      ))}
-    </ul>
+    <section>
+      <div className="xl:container mx-auto px-5">
+        <ul className="list-none">
+          {posts.map(post => (
+            <li key={post.id} className="mb-10 bg-slate-200 rounded-md p-4">
+              <Post post={post} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 

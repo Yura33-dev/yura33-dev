@@ -1,12 +1,12 @@
 // src/App.tsx
-import './App.css';
+
+import { Outlet } from 'react-router-dom';
 import Layout from './components/Layout';
-import BlogPage from './pages/Blog';
 
 function App() {
   return (
     <Layout>
-      <BlogPage />
+      <Outlet />;
     </Layout>
   );
 }

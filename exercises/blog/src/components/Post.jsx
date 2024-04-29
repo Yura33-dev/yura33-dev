@@ -19,14 +19,14 @@ function Post({ post }) {
         <img src={post.cover} alt={post.title} className="object-cover" />
       </div>
       <div className="post-footer">
-        <h3 className="mb-4">
-          {post.title} {post.id}
+        <h3 className="mb-4 text-2xl text-center">
+          {post.title} (ID: {post.id})
         </h3>
-        <p className="mb-4">{post.content}</p>
+        <p className="mb-7 max-w-2xl m-auto">{post.content}</p>
         <button
           id="like"
           onClick={clickHandler}
-          className="bg-orange-200 p-3 rounded-md"
+          className="bg-orange-200 p-3 rounded-md block m-auto"
         >
           Like this post <strong>{likes}</strong>
         </button>

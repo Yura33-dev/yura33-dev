@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer base {
+  header li:has(a.active) {
+    @apply bg-orange-400;
+  }
+} */
